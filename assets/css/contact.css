@@ -1,0 +1,358 @@
+/**
+ * Contact Page CSS - Magyarország Felfedezői Szövetség
+ * 
+ * Modern contact form and info cards
+ * Requires: variables.css, modern.css
+ * 
+ * @package MagyarorszagFelfedezoi
+ * @version 2.0.0
+ */
+
+/* ============================================
+   CONTACT WRAPPER
+   ============================================ */
+
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+/* ============================================
+   CONTACT INFO CARDS
+   ============================================ */
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact-card {
+    background: var(--bg-primary, #ffffff);
+    border-radius: var(--radius-xl, 1rem);
+    padding: 1.5rem;
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+    box-shadow: var(--shadow-md, 0 4px 8px rgba(0, 0, 0, 0.08));
+    transition: var(--transition-base, 200ms ease-in-out);
+    border-left: 4px solid var(--color-green, #436f4d);
+}
+
+.contact-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg, 0 8px 16px rgba(0, 0, 0, 0.12));
+}
+
+.contact-card.highlight {
+    border-left-color: var(--color-red, #c41e3a);
+    background: linear-gradient(135deg, 
+        rgba(196, 30, 58, 0.03) 0%, 
+        rgba(67, 111, 77, 0.03) 100%
+    );
+}
+
+.contact-card-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--color-red, #c41e3a), var(--color-green, #436f4d));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.contact-card-icon i {
+    color: white;
+    font-size: 1.25rem;
+}
+
+.contact-card-content {
+    flex: 1;
+}
+
+.contact-card-content h3 {
+    font-family: var(--font-family-heading, 'Roboto Slab', serif);
+    font-size: 1rem;
+    font-weight: var(--font-weight-bold, 700);
+    color: var(--text-dark, #2c3e50);
+    margin: 0 0 0.5rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.contact-name {
+    font-size: 1.1rem;
+    font-weight: var(--font-weight-semibold, 600);
+    color: var(--color-red, #c41e3a);
+    margin: 0 0 0.5rem 0;
+}
+
+.contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-medium, #5a5a5a);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: var(--transition-fast, 150ms ease-in-out);
+}
+
+.contact-link:hover {
+    color: var(--color-red, #c41e3a);
+}
+
+.contact-link i {
+    color: var(--color-gold, #d4af37);
+}
+
+.contact-phone {
+    font-size: 1.25rem;
+    font-weight: var(--font-weight-bold, 700);
+    color: var(--color-green, #436f4d);
+    text-decoration: none;
+    transition: var(--transition-fast, 150ms ease-in-out);
+}
+
+.contact-phone:hover {
+    color: var(--color-red, #c41e3a);
+}
+
+.tax-number {
+    font-size: 1.2rem;
+    font-weight: var(--font-weight-black, 900);
+    color: var(--color-green, #436f4d);
+    font-family: 'Courier New', monospace;
+    letter-spacing: 1px;
+    margin: 0.5rem 0 0 0;
+}
+
+/* ============================================
+   CONTACT FORM
+   ============================================ */
+
+.contact-form-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form-card {
+    background: var(--bg-primary, #ffffff);
+    border-radius: var(--radius-xl, 1rem);
+    padding: 2.5rem;
+    box-shadow: var(--shadow-lg, 0 8px 16px rgba(0, 0, 0, 0.12));
+}
+
+.contact-form-card h2 {
+    font-family: var(--font-family-heading, 'Roboto Slab', serif);
+    font-size: 1.5rem;
+    font-weight: var(--font-weight-bold, 700);
+    color: var(--color-red, #c41e3a);
+    margin: 0 0 2rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.contact-form-card h2 i {
+    color: var(--color-gold, #d4af37);
+}
+
+/* Form Layout */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+/* Labels */
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: var(--font-weight-semibold, 600);
+    color: var(--text-dark, #2c3e50);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.form-group label i {
+    color: var(--color-green, #436f4d);
+    font-size: 0.85rem;
+}
+
+.required {
+    color: var(--color-red, #c41e3a);
+}
+
+/* Inputs */
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    font-family: var(--font-family-base, 'Open Sans', sans-serif);
+    font-size: 1rem;
+    color: var(--text-dark, #2c3e50);
+    background: var(--bg-secondary, #f8f9fa);
+    border: 2px solid var(--border-light, rgba(210, 215, 217, 0.75));
+    border-radius: var(--radius-lg, 0.5rem);
+    transition: var(--transition-base, 200ms ease-in-out);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-green, #436f4d);
+    background: var(--bg-primary, #ffffff);
+    box-shadow: 0 0 0 4px rgba(67, 111, 77, 0.1);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: var(--text-muted, #9fa3a6);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+/* Form Actions */
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.btn-lg {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+}
+
+.btn-secondary {
+    background: var(--bg-tertiary, #eff1f2);
+    color: var(--text-dark, #2c3e50);
+    border: 2px solid var(--border-light, rgba(210, 215, 217, 0.75));
+}
+
+.btn-secondary:hover {
+    background: var(--bg-secondary, #f8f9fa);
+    border-color: var(--text-light, #7f888f);
+    color: var(--text-dark, #2c3e50);
+}
+
+/* ============================================
+   FORM MESSAGES
+   ============================================ */
+
+.form-success {
+    text-align: center;
+    padding: 3rem 2rem;
+}
+
+.form-success i {
+    font-size: 4rem;
+    color: var(--color-green, #436f4d);
+    margin-bottom: 1rem;
+}
+
+.form-success h3 {
+    font-family: var(--font-family-heading, 'Roboto Slab', serif);
+    font-size: 1.5rem;
+    color: var(--color-green, #436f4d);
+    margin: 0 0 0.5rem 0;
+}
+
+.form-success p {
+    color: var(--text-medium, #5a5a5a);
+    margin: 0;
+}
+
+.form-error {
+    background: rgba(196, 30, 58, 0.1);
+    border: 2px solid var(--color-red, #c41e3a);
+    border-radius: var(--radius-lg, 0.5rem);
+    padding: 1rem 1.5rem;
+    color: var(--color-red, #c41e3a);
+    font-weight: var(--font-weight-semibold, 600);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-error i {
+    font-size: 1.25rem;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media screen and (max-width: 1024px) {
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .contact-info {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .contact-info {
+        grid-template-columns: 1fr;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .contact-form-card {
+        padding: 1.5rem;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .form-actions .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .contact-card {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .contact-form-card h2 {
+        font-size: 1.25rem;
+        justify-content: center;
+    }
+}

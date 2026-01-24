@@ -1,0 +1,17 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# XAMPP / PHP
+vendor/
+node_modules/
+.env
+*.log
+
+# Cache / build
+dist/
+build/
