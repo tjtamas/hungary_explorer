@@ -35,7 +35,7 @@ $tpl->set('pageTitle', 'Kezdőlap')
 $tpl->set('bannerTitle', 'A Szövetségről')
     ->set('bannerQuote', SITE_TAGLINE)
     ->set('bannerText', 'Szövetségünk 1989. szeptemberében alakult. Gyermekek, fiatalok, felnőttek szervezete vagyunk. Szövetséget kötöttünk a szülőföld, a haza felfedezésére, nemzeti értékeink, hagyományaink megőrzésére, az igaz emberi értékek követésére, a gyermek ember igaz értékek menti jellemformálására, a közösségi élet ajándékosztó erejének építésére.')
-    ->set('bannerImage', img('DSC_2546.jpg'))
+    ->set('bannerImage', img('team.jpg'))
     ->set('bannerImageAlt', 'Magyarország Felfedezői Szövetség csoportkép')
     ->set('bannerButtonText', 'Tovább')
     ->set('bannerButtonLink', url('pages/about.php'));
@@ -210,7 +210,7 @@ $tpl->set('stats', $stats);
             <div class="footer-bottom">
                 <p>&copy; <?php echo date('Y'); ?> <?php echo SITE_NAME; ?>. Minden jog fenntartva.</p>
                 <p>
-                    Készítette: <a href="mailto:tothjanostamas@gmail.com">Tóth J. Tamás</a> | 
+                    Készítette: <a href="https://tjtamas.hu/"target="_blank" rel="noopener noreferrer" >Tóth J. Tamás</a> | 
                     <a href="<?php echo url('gdpr/adatkezeles.pdf'); ?>">Adatkezelési tájékoztató</a>
                 </p>
             </div>

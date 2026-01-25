@@ -66,26 +66,61 @@ define('NEWS_ITEMS', [
     ],
 
     // ========== 2025 ==========
-    [
+
+        [
         'id' => 'tabor-2025',
         'slug' => '2025/tabor2025',
         'title' => 'Pásztortűz 2025',
         'date' => '2025-07-28',
         'year' => 2025,
         'category' => 'tabor',
-        'image' => 'galeria/2025/tabor/tab006.jpg',
+        'image' => 'gallery/2025/camp/tab006.jpg',
         'excerpt' => '2025. július 21-től július 28-ig ismét felfedezők lepték el a Magyarország Felfedezői Szövetség táborát.',
         'featured' => false,
     ],
-    [
+    
+   [
         'id' => '1848-megemlekezes-2025',
         'slug' => '2025/1848',
         'title' => '1848-as megemlékezés',
         'date' => '2025-03-15',
         'year' => 2025,
         'category' => 'megemlekezes',
-        'image' => 'galeria/2025/main/1848_main.jpg',
+        'image' => 'gallery/2025/1848/1848_5.jpg',
         'excerpt' => 'Szövetségünk ifi vezetőivel idén is megemlékeztünk a Március idusán történt eseményekről.',
+        'featured' => false,
+    ],
+    [
+        'id' => 'citera-2025',
+        'slug' => '2025/citera',
+        'title' => 'Citerák napja',
+        'date' => '2025-03-22',
+        'year' => 2025,
+        'category' => 'esemeny',
+        'image' => 'gallery/2025/citera/kikelet_4.jpg',
+        'excerpt' => 'A Felsőszeliben működő Kikelet citerazenekar nyitotta meg a Néprajzi Múzeumban a "Citerák napja" rendezvényét.',
+        'featured' => false,
+    ],
+    [
+        'id' => 'csemadok-2025',
+        'slug' => '2025/csemadok',
+        'title' => 'Csemadok 1848-as megemlékezés',
+        'date' => '2025-03-15',
+        'year' => 2025,
+        'category' => 'megemlekezes',
+        'image' => 'gallery/2025/csemadok/csemadok-001.jpg',
+        'excerpt' => 'A Csemadok Felsőszeli Alapszervezete a helyi temetőben levő kopjafánál tartotta a megemlékezést.',
+        'featured' => false,
+    ],
+    [
+        'id' => 'erdely-tavasz-2025',
+        'slug' => '2025/erdely',
+        'title' => 'Erdélyi tavaszi beszámoló',
+        'date' => '2025-04-10',
+        'year' => 2025,
+        'category' => 'program',
+        'image' => 'gallery/2025/erdely/erdely_2.jpg',
+        'excerpt' => 'Március, április igazán tartalmas időszak volt csapatunk életében. Új tagokat avattunk és megemlékezéseket tartottunk.',
         'featured' => false,
     ],
 
