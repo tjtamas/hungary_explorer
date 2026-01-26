@@ -48,7 +48,7 @@ $host = $_SERVER['HTTP_HOST'] ?? 'localhost';
 
 // Fixed base URL - ne a script path-ot használjuk, hanem fix értéket
 
-$basePath = '/Webpage';  // <-- Ha gyökérben van, legyen ''
+$basePath = '';  // <-- Ha gyökérben van, legyen ''
 $baseUrl = $protocol . $host . $basePath;
 
 define('BASE_URL', rtrim($baseUrl, '/'));
