@@ -51,7 +51,7 @@ define('NEWS_ITEMS', [
     [
         'id' => 'jelentkezes-2026',
         'slug' => '2026/jelentkezes',
-        'title' => 'Jelentkezés Pásztortűz 2026',
+        'title' => 'Pásztortűz tábor 2026',
         'date' => '2026-01-15',
         'year' => 2026,
         'category' => 'jelentkezes',

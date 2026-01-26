@@ -1,7 +1,49 @@
-<!-- Sticky SZJA Sidebar -->
+<!-- Sticky Sidebar -->
 <aside id="sidebar" class="sidebar-widget">
     <div class="sidebar-sticky">
         
+        <!-- Registration Widget - FEATURED -->
+        <?php 
+        // Ensure news.php is loaded
+        if (!function_exists('getActiveRegistration')) {
+            require_once __DIR__ . '/../config/news.php';
+        }
+        $activeRegistration = getActiveRegistration();
+        if ($activeRegistration): 
+        ?>
+        <div class="widget registration-widget pulse-widget">
+            <div class="widget-header registration-header">
+                <h3>🔥 Jelentkezés</h3>
+                <div class="widget-icon pulse-icon">🎒</div>
+            </div>
+            <div class="widget-content">
+                <h4 class="registration-title"><?php echo htmlspecialchars($activeRegistration['title']); ?></h4>
+                <p class="registration-text">
+                    <?php echo htmlspecialchars($activeRegistration['excerpt']); ?>
+                </p>
+                <div class="registration-details">
+                    <div class="registration-date">
+                        <i class="fas fa-calendar-alt"></i>
+                        <strong>Tábor:</strong> 
+                        <?php echo date('Y. m. d.', strtotime($activeRegistration['camp_date_start'])); ?> - 
+                        <?php echo date('m. d.', strtotime($activeRegistration['camp_date_end'])); ?>
+                    </div>
+                    <div class="registration-deadline">
+                        <i class="fas fa-clock"></i>
+                        <strong>Határidő:</strong> 
+                        <?php echo date('Y. m. d.', strtotime($activeRegistration['registration_deadline'])); ?>
+                    </div>
+                </div>
+                  <a href="<?php echo url('pages/news/registration.php'); ?>" 
+                      class="btn-registration-fancy">
+                    <span class="btn-icon">🔥</span>
+                     <span class="btn-text">Jelentkezz Most!</span>
+                    <span class="btn-arrow">→</span>
+                    </a>
+            </div>
+        </div>
+        <?php endif; ?>
+
         <!-- SZJA Section -->
         <div class="widget szja-widget">
             <div class="widget-header">
@@ -16,10 +58,6 @@
                     <span class="tax-label">Adószám:</span>
                     <span class="tax-number"><?php echo SZJA_TAX_NUMBER; ?></span>
                 </div>
-                <a href="<?php echo url('pages/contact.php'); ?>" class="btn-szja">
-                    <i class="fas fa-hand-holding-heart"></i>
-                    Támogatás részletei
-                </a>
             </div>
         </div>
 
@@ -65,7 +103,7 @@
             </div>
         </div>
 
-        <!-- Quick Links (Optional) -->
+        <!-- Quick Links -->
         <div class="widget quick-links-widget">
             <div class="widget-header">
                 <h3>Gyors linkek</h3>

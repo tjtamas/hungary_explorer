@@ -14,6 +14,7 @@ declare(strict_types=1);
 // Bootstrap the application
 require_once __DIR__ . '/config/config.php';
 require_once __DIR__ . '/config/TemplateEngine.php';
+require_once __DIR__ . '/config/news.php';
 
 // Create template engine instance
 $tpl = new TemplateEngine('templates/');
@@ -39,10 +40,6 @@ $tpl->set('bannerTitle', 'A Szövetségről')
     ->set('bannerImageAlt', 'Magyarország Felfedezői Szövetség csoportkép')
     ->set('bannerButtonText', 'Tovább')
     ->set('bannerButtonLink', url('pages/about.php'));
-
-// News data (később ezt adatbázisból vagy JSON-ből töltjük)
-// News data - config/news.php-ból
-require_once __DIR__ . '/config/news.php';
 
 // Get latest 3 news items
 $allNews = getNewsItems();
@@ -117,15 +114,15 @@ $tpl->set('stats', $stats);
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+</head>
+
+<body class="<?php echo $tpl->e($tpl->get('pageClass', '')); ?>">
+
     <!-- Facebook SDK -->
     <?php if (ENABLE_FACEBOOK_SDK): ?>
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/hu_HU/sdk.js#xfbml=1&version=v5.0&appId=354763484558291&autoLogAppEvents=1"></script>
     <?php endif; ?>
-</head>
-
-<body class="<?php echo $tpl->e($tpl->get('pageClass', '')); ?>">
 
     <!-- Header with Top Navigation -->
     <?php $tpl->render('header'); ?>
@@ -154,8 +151,42 @@ $tpl->set('stats', $stats);
                 </section>
 
                 <!-- News Section -->
+                <section id="news" class="news-section">
+                    <header class="section-header">
+                        <h2 class="section-title">Híreink</h2>
+                        <div class="section-underline"></div>
+                    </header>
 
-                <?php $tpl->render('news'); ?>
+                    <div class="news-grid">
+                        <?php if (empty($newsItems)): ?>
+                            <p class="no-news">Jelenleg nincsenek hírek.</p>
+                        <?php else: ?>
+                            <?php foreach ($newsItems as $index => $news): ?>
+                                <article class="news-card fade-in" style="animation-delay: <?php echo $index * 0.1; ?>s;">
+                                    <a href="<?php echo $tpl->e($news['link']); ?>" class="news-image-link">
+                                        <div class="news-image-container">
+                                            <img src="<?php echo $tpl->e($news['image']); ?>" alt="<?php echo $tpl->e($news['title']); ?>" class="news-image" loading="lazy">
+                                            <?php if (!empty($news['tag'])): ?>
+                                                <span class="news-tag"><?php echo $tpl->e($news['tag']); ?></span>
+                                            <?php endif; ?>
+                                        </div>
+                                    </a>
+
+                                    <div class="news-content">
+                                        <h3 class="news-title">
+                                            <a href="<?php echo $tpl->e($news['link']); ?>"><?php echo $tpl->e($news['title']); ?></a>
+                                        </h3>
+                                        <p class="news-excerpt"><?php echo $tpl->e($news['excerpt']); ?></p>
+                                        <div class="news-footer">
+                                            <span class="news-date"><i class="far fa-calendar-alt"></i> <?php echo $tpl->e($news['date']); ?></span>
+                                            <a href="<?php echo $tpl->e($news['link']); ?>" class="news-link">Tovább <i class="fas fa-arrow-right"></i></a>
+                                        </div>
+                                    </div>
+                                </article>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
+                    </div>
+                </section>
 
             </div>
         </main>

@@ -1109,3 +1109,349 @@
         gap: 2rem;
     }
 }
+/* ============================================
+   REGISTRATION WIDGET - ENHANCED ANIMATIONS
+   ============================================ */
+
+/* Registration Widget Container */
+.registration-widget {
+    background: linear-gradient(135deg, #e91e63 0%, #c2185b 100%);
+    border: none;
+    box-shadow: 0 4px 20px rgba(233, 30, 99, 0.3);
+    animation: pulse-glow 2s ease-in-out infinite, slide-in 0.5s ease-out;
+    position: relative;
+    overflow: visible !important;
+}
+
+.registration-widget::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #ff4081, #f50057, #ff4081);
+    border-radius: 1rem;
+    z-index: -1;
+    animation: rotate-gradient 3s linear infinite;
+    opacity: 0.7;
+}
+
+.registration-widget .widget-header {
+    background: rgba(255, 255, 255, 0.15);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    animation: shimmer 2s ease-in-out infinite;
+}
+
+.registration-widget .widget-header h3 {
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: 700;
+    animation: text-glow 2s ease-in-out infinite;
+}
+
+.registration-widget .pulse-icon {
+    animation: bounce-rotate 1.5s ease-in-out infinite;
+    font-size: 2rem;
+    display: inline-block;
+}
+
+/* Widget Content */
+.registration-widget .widget-content {
+    color: #fff;
+}
+
+.registration-title {
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.registration-text {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+/* Registration Details */
+.registration-details {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 15px;
+}
+
+.registration-details > div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #fff;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+}
+
+.registration-details > div:last-child {
+    margin-bottom: 0;
+}
+
+.registration-details i {
+    color: #ffd700;
+    width: 16px;
+    animation: icon-pulse 1.5s ease-in-out infinite;
+}
+
+.registration-details strong {
+    font-weight: 600;
+}
+
+/* Registration Button - FANCY */
+.btn-registration-fancy {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    padding: 16px 24px;
+    background: linear-gradient(135deg, #ffd700 0%, #ffed4e 50%, #ffd700 100%);
+    background-size: 200% 100%;
+    color: #c2185b;
+    border: none;
+    border-radius: 50px;
+    font-weight: 900;
+    font-size: 1.1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.4s ease;
+    box-shadow: 
+        0 4px 15px rgba(255, 215, 0, 0.4),
+        0 0 0 0 rgba(255, 215, 0, 0.6),
+        inset 0 2px 10px rgba(255, 255, 255, 0.5);
+    position: relative;
+    overflow: hidden;
+    animation: button-mega-pulse 2s ease-in-out infinite;
+}
+
+.btn-registration-fancy::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn-registration-fancy:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.btn-registration-fancy:hover {
+    background-position: 100% 0;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 
+        0 8px 25px rgba(255, 215, 0, 0.6),
+        0 0 30px rgba(255, 215, 0, 0.8),
+        inset 0 2px 15px rgba(255, 255, 255, 0.7);
+    animation: none;
+}
+
+.btn-registration-fancy:active {
+    transform: translateY(-1px) scale(1.03);
+}
+
+.btn-icon {
+    font-size: 1.4rem;
+    animation: icon-fire 1s ease-in-out infinite;
+    z-index: 1;
+}
+
+.btn-text {
+    font-family: 'Roboto Slab', serif;
+    z-index: 1;
+}
+
+.btn-arrow {
+    font-size: 1.4rem;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+    z-index: 1;
+}
+
+.btn-registration-fancy:hover .btn-arrow {
+    transform: translateX(8px);
+}
+
+.btn-registration-fancy:hover .btn-icon {
+    animation: icon-fire-fast 0.5s ease-in-out infinite;
+}
+
+/* ============================================
+   KEYFRAME ANIMATIONS
+   ============================================ */
+
+/* Pulsing Glow with Expanding Ring */
+@keyframes pulse-glow {
+    0%, 100% {
+        box-shadow: 
+            0 4px 20px rgba(233, 30, 99, 0.4),
+            0 0 0 0 rgba(233, 30, 99, 0.6),
+            inset 0 0 20px rgba(255, 255, 255, 0.1);
+    }
+    50% {
+        box-shadow: 
+            0 8px 40px rgba(233, 30, 99, 0.6),
+            0 0 0 15px rgba(233, 30, 99, 0),
+            inset 0 0 30px rgba(255, 255, 255, 0.2);
+        transform: scale(1.02);
+    }
+}
+
+/* Rotating Gradient Border */
+@keyframes rotate-gradient {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+/* Shimmer Effect */
+@keyframes shimmer {
+    0%, 100% {
+        background: rgba(255, 255, 255, 0.15);
+    }
+    50% {
+        background: rgba(255, 255, 255, 0.25);
+    }
+}
+
+/* Text Glow */
+@keyframes text-glow {
+    0%, 100% {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+    50% {
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 215, 0, 0.6);
+    }
+}
+
+/* Bounce with Rotation */
+@keyframes bounce-rotate {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-8px) rotate(-10deg);
+    }
+    75% {
+        transform: translateY(-8px) rotate(10deg);
+    }
+}
+
+/* Icon Pulse */
+@keyframes icon-pulse {
+    0%, 100% {
+        transform: scale(1);
+        color: #ffd700;
+    }
+    50% {
+        transform: scale(1.2);
+        color: #ffed4e;
+    }
+}
+
+/* Button Pulse */
+@keyframes button-pulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+    50% {
+        transform: scale(1.03);
+        box-shadow: 0 4px 20px rgba(255, 215, 0, 0.4);
+    }
+}
+
+/* Button Mega Pulse */
+@keyframes button-mega-pulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 
+            0 4px 15px rgba(255, 215, 0, 0.4),
+            0 0 0 0 rgba(255, 215, 0, 0.6),
+            inset 0 2px 10px rgba(255, 255, 255, 0.5);
+    }
+    50% {
+        transform: scale(1.04);
+        box-shadow: 
+            0 6px 25px rgba(255, 215, 0, 0.6),
+            0 0 20px rgba(255, 215, 0, 0.8),
+            inset 0 2px 15px rgba(255, 255, 255, 0.7);
+    }
+}
+
+/* Fire Icon Animation */
+@keyframes icon-fire {
+    0%, 100% {
+        transform: scale(1) rotate(0deg);
+    }
+    25% {
+        transform: scale(1.1) rotate(-5deg);
+    }
+    75% {
+        transform: scale(1.1) rotate(5deg);
+    }
+}
+
+@keyframes icon-fire-fast {
+    0%, 100% {
+        transform: scale(1) rotate(0deg);
+    }
+    50% {
+        transform: scale(1.2) rotate(10deg);
+    }
+}
+
+/* Slide In */
+@keyframes slide-in {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .registration-widget {
+        margin-bottom: 20px;
+    }
+    
+    .registration-title {
+        font-size: 1rem;
+    }
+    
+    .registration-details > div {
+        font-size: 0.85rem;
+    }
+    
+    .btn-registration {
+        font-size: 0.95rem;
+        padding: 10px 18px;
+    }
+    
+    .registration-widget::before {
+        display: none; /* Remove gradient border on mobile for performance */
+    }
+}

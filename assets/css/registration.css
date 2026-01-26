@@ -1,0 +1,391 @@
+/* ============================================
+   REGISTRATION PAGE - Pásztortűz 2026
+   ============================================ */
+
+.registration-page {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+/* Page Header */
+.page-header {
+    text-align: center;
+    margin: 3rem 0;
+}
+
+.page-title {
+    font-family: 'Roboto Slab', serif;
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--color-red, #c41e3a);
+    margin: 0 0 0.5rem 0;
+}
+
+.page-subtitle {
+    font-family: 'Roboto Slab', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-green, #436f4d);
+    margin: 0 0 1rem 0;
+}
+
+/* Registration Info Box */
+.registration-info-box {
+    max-width: 1000px;
+    margin: 0 auto 3rem;
+    background: linear-gradient(135deg, #e91e63 0%, #c2185b 100%);
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 8px 24px rgba(233, 30, 99, 0.3);
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.info-item i {
+    font-size: 2rem;
+    color: #ffd700;
+}
+
+.info-content {
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+}
+
+.info-content strong {
+    font-size: 0.85rem;
+    font-weight: 600;
+    opacity: 0.9;
+    margin-bottom: 0.25rem;
+}
+
+.info-content span {
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+/* Registration Form Section */
+.registration-form-section {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 1rem;
+    padding: 2.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.registration-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Form Sections */
+.form-section {
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 2rem;
+}
+
+.form-section:last-of-type {
+    border-bottom: none;
+}
+
+.form-section-title {
+    font-family: 'Roboto Slab', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--color-green, #436f4d);
+    margin: 0 0 1.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.form-section-title i {
+    color: var(--color-red, #c41e3a);
+}
+
+/* Form Rows */
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-row:last-child {
+    margin-bottom: 0;
+}
+
+/* Form Groups */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.form-label.required::after {
+    content: ' *';
+    color: var(--color-red, #c41e3a);
+    font-weight: 700;
+}
+
+.form-input {
+    padding: 0.875rem 1rem;
+    border: 2px solid #dee2e6;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-family: 'Open Sans', sans-serif;
+    transition: all 0.3s ease;
+    background: #fff;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--color-green, #436f4d);
+    box-shadow: 0 0 0 3px rgba(67, 111, 77, 0.1);
+}
+
+.form-input::placeholder {
+    color: #adb5bd;
+}
+
+.form-input:invalid:not(:placeholder-shown) {
+    border-color: var(--color-red, #c41e3a);
+}
+
+.form-input:valid:not(:placeholder-shown) {
+    border-color: #28a745;
+}
+
+.was-validated .form-input:invalid {
+    border-color: var(--color-red, #c41e3a);
+}
+
+.was-validated .form-input:valid {
+    border-color: #28a745;
+}
+
+/* Form Help & Error Text */
+.form-help {
+    font-size: 0.85rem;
+    color: #6c757d;
+    font-style: italic;
+}
+
+.form-error {
+    display: none;
+    font-size: 0.85rem;
+    color: var(--color-red, #c41e3a);
+    font-weight: 600;
+}
+
+.was-validated .form-input:invalid ~ .form-error {
+    display: block;
+}
+
+/* Checkbox Groups */
+.form-checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.form-checkbox-group:last-child {
+    margin-bottom: 0;
+}
+
+.form-checkbox {
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+    cursor: pointer;
+    accent-color: var(--color-green, #436f4d);
+}
+
+.form-checkbox-label {
+    font-size: 0.95rem;
+    color: #2c3e50;
+    line-height: 1.6;
+    cursor: pointer;
+}
+
+.form-checkbox-label a {
+    color: var(--color-red, #c41e3a);
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.form-checkbox-label a:hover {
+    color: var(--color-green, #436f4d);
+}
+
+/* Form Actions */
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.btn-submit,
+.btn-reset {
+    padding: 1rem 2.5rem;
+    font-family: 'Roboto Slab', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-submit {
+    background: linear-gradient(135deg, var(--color-green, #436f4d), #2d4a35);
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(67, 111, 77, 0.3);
+}
+
+.btn-submit:hover {
+    background: linear-gradient(135deg, #2d4a35, #1f3325);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(67, 111, 77, 0.4);
+}
+
+.btn-submit:active {
+    transform: translateY(0);
+}
+
+.btn-reset {
+    background: #6c757d;
+    color: #fff;
+}
+
+.btn-reset:hover {
+    background: #5a6268;
+    transform: translateY(-2px);
+}
+
+/* No Registration Box */
+.no-registration-box {
+    max-width: 600px;
+    margin: 4rem auto;
+    text-align: center;
+    padding: 3rem;
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.no-registration-box i {
+    font-size: 4rem;
+    color: var(--color-gold, #d4af37);
+    margin-bottom: 1.5rem;
+}
+
+.no-registration-box h3 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 1.5rem;
+    color: var(--color-red, #c41e3a);
+    margin-bottom: 1rem;
+}
+
+.no-registration-box p {
+    font-size: 1.1rem;
+    color: #6c757d;
+    margin-bottom: 2rem;
+}
+
+/* Page Navigation */
+.page-navigation {
+    max-width: 1200px;
+    margin: 2rem auto 1rem;
+    padding: 0 2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 2rem;
+    }
+
+    .page-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .registration-info-box {
+        padding: 1.5rem;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .registration-form-section {
+        padding: 1.5rem;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .btn-submit,
+    .btn-reset {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-header {
+        margin: 2rem 0;
+    }
+
+    .page-title {
+        font-size: 1.5rem;
+    }
+
+    .page-subtitle {
+        font-size: 1rem;
+    }
+
+    .registration-form-section {
+        padding: 1rem;
+    }
+
+    .form-section-title {
+        font-size: 1.1rem;
+    }
+}
