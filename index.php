@@ -41,32 +41,26 @@ $tpl->set('bannerTitle', 'A Szövetségről')
     ->set('bannerButtonLink', url('pages/about.php'));
 
 // News data (később ezt adatbázisból vagy JSON-ből töltjük)
-$newsItems = [
-    [
-        'title' => 'Jelentkezés Pásztortűz 2026',
-        'excerpt' => 'Várjuk jelentkezésedet idei nyári táborunkba, ahol ismét felejthetetlen élmények várnak!',
-        'image' => img('galeria/2026/tabor/tabor2026.jfif'),
-        'link' => url('news/2026/jelentkezes'),
-        'date' => '2026. Január',
-        'tag' => 'ÚJ'
-    ],
-    [
-        'title' => 'Pásztortűz 2025',
-        'excerpt' => '2025. július 21-től július 28-ig ismét felfedezők lepték el a Magyarország Felfedezői Szövetség táborát.',
-        'image' => img('galeria/2025/tabor/tab006.jpg'),
-        'link' => url('news/2025/tabor2025'),
-        'date' => '2025. Július',
-        'tag' => 'TÁBOR'
-    ],
-    [
-        'title' => 'Márciusi programjaink',
-        'excerpt' => 'Szövetségünk márciusi programjairól az összefoglalást itt olvashatod.',
-        'image' => img('galeria/2025/main/1848_main.jpg'),
-        'link' => url('news/2025/2025_mar'),
-        'date' => '2025. Március',
-        'tag' => 'PROGRAM'
-    ]
-];
+// News data - config/news.php-ból
+require_once __DIR__ . '/config/news.php';
+
+// Get latest 3 news items
+$allNews = getNewsItems();
+$latestNews = array_slice($allNews, 0, 3);
+
+// Transform to template format
+$newsItems = [];
+foreach ($latestNews as $news) {
+    $categoryInfo = getCategoryInfo($news['category']);
+    $newsItems[] = [
+        'title' => $news['title'],
+        'excerpt' => $news['excerpt'],
+        'image' => img($news['image']),
+        'link' => url('pages/news/article.php?slug=' . $news['slug']),
+        'date' => formatDateHu($news['date']),
+        'tag' => strtoupper($categoryInfo['name'])
+    ];
+}
 
 $tpl->set('newsItems', $newsItems);
 
