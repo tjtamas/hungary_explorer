@@ -526,3 +526,26 @@
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
+/* Gallery Link */
+.gallery-link {
+    display: block;
+    width: fit-content;
+    margin: 2rem 0 2rem auto;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, var(--color-green, #436f4d), #2d4a35);
+    color: white !important;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(67, 111, 77, 0.3);
+}
+
+.gallery-link:hover {
+    background: linear-gradient(135deg, #2d4a35, #1f3325);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(67, 111, 77, 0.4);
+    color: white !important;
+}

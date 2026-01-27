@@ -13,6 +13,88 @@ require_once __DIR__ . '/../../config/config.php';
 require_once __DIR__ . '/../../config/news.php';
 require_once __DIR__ . '/../../config/TemplateEngine.php';
 
+/**
+ * Get article content from markdown file
+ */
+function getArticleContent(array $news): string
+{
+    $slug = $news['slug'];
+    $mdFile = __DIR__ . '/../../content/news/' . $slug . '.md';
+    
+    // Ha létezik markdown fájl, olvassuk be
+    if (file_exists($mdFile)) {
+        $content = file_get_contents($mdFile);
+        return parseMarkdown($content);
+    }
+    
+    // Fallback: excerpt megjelenítése
+    return '<p>' . htmlspecialchars($news['excerpt']) . '</p>';
+}
+
+/**
+ * Simple markdown parser
+ */
+function parseMarkdown(string $text): string
+{
+    // Headers (elöbb, mielőtt a paragrafusokat kezeljük)
+    $text = preg_replace('/^### (.+)$/m', "\n<h4>$1</h4>\n", $text);
+    $text = preg_replace('/^## (.+)$/m', "\n<h3>$1</h3>\n", $text);
+    $text = preg_replace('/^# (.+)$/m', "\n<h2>$1</h2>\n", $text);
+    
+    // Bold
+    $text = preg_replace('/\*\*(.+?)\*\*/', '<strong>$1</strong>', $text);
+    
+    // Italic  
+    $text = preg_replace('/\*(.+?)\*/', '<em>$1</em>', $text);
+    
+    // Blockquotes
+    $text = preg_replace('/^> (.+)$/m', '<blockquote>$1</blockquote>', $text);
+    
+ // Images - relatív útvonal támogatás
+$text = preg_replace_callback('/!\[([^\]]*)\]\(([^)]+)\)/', function($m) {
+    $src = $m[2];
+    // Ha ../ -al kezdődik, akkor relatív útvonal a markdown fájlhoz képest
+    if (strpos($src, '../') === 0) {
+        // Távolítsuk el a ../ részeket és használjuk az img() helpert
+        $src = preg_replace('#^\.\./+#', '', $src);
+        $src = preg_replace('#^images/#', '', $src); // images/ prefix eltávolítása
+        $src = img($src);
+    }
+    return '<img src="' . $src . '" alt="' . $m[1] . '" class="article-image">';
+}, $text);
+    
+   // Links - Gallery linkek külön class-szal
+$text = preg_replace_callback('/\[([^\]]+)\]\(([^)]+)\)/', function($m) {
+    $text = $m[1];
+    $url = $m[2];
+    $class = (strpos($url, 'gallery') !== false) ? ' class="gallery-link"' : '';
+    return '<a href="' . $url . '"' . $class . '>' . $text . '</a>';
+}, $text);
+    
+    // Horizontal rule
+    $text = preg_replace('/^---$/m', '<hr>', $text);
+    
+    // Lists
+    $text = preg_replace('/^- (.+)$/m', '<li>$1</li>', $text);
+    $text = preg_replace('/(<li>.*<\/li>\s*)+/', '<ul>$0</ul>', $text);
+    
+  // Paragraphs (skip headers, ul, hr, blockquote)
+$text = preg_replace('/\n\n+/', '</p><p>', $text);
+$text = '<p>' . $text . '</p>';
+
+// Single line breaks -> <br>
+$text = preg_replace('/(?<!<\/p>)\n(?!<p>)/', '<br>', $text);
+    
+  // Clean up - Gallery link ne kerüljön <p>-be
+$text = preg_replace('/<p>\s*<\/p>/', '', $text);
+$text = preg_replace('/<p>\s*<(h[2-4]|ul|hr|blockquote|img|a[^>]*class="gallery-link")/', '<$1', $text);
+$text = preg_replace('/<\/(h[2-4]|ul|hr|blockquote)>\s*<\/p>/', '</$1>', $text);
+$text = preg_replace('/<\/p>\s*<img/', '<img', $text);
+$text = preg_replace('/<\/p>\s*<a[^>]*class="gallery-link"/', '<a class="gallery-link"', $text);
+    
+    return $text;
+}
+
 // Get slug from URL
 $slug = $_GET['slug'] ?? '';
 
@@ -59,105 +141,8 @@ foreach ($allNews as $index => $item) {
 $prevNews = $currentIndex !== null && isset($allNews[$currentIndex + 1]) ? $allNews[$currentIndex + 1] : null;
 $nextNews = $currentIndex !== null && $currentIndex > 0 ? $allNews[$currentIndex - 1] : null;
 
-// Article content based on slug (can be extended with markdown files later)
+// Get article content
 $articleContent = getArticleContent($news);
-
-/**
- * Get article content based on news item
- */
-function getArticleContent(array $news): string
-{
-    $slug = $news['slug'];
-    
-    // Content mapping - later this can come from markdown files or database
-    $contents = [
-        '2025/tabor2025' => '
-            <p>Július 21-én külhoni és anyaországi gyerekek és felnőttek gyülekeztek egy számukra nagyon különleges helyen. Egy csapásra régi barátságok elevenedtek fel és új, talán életre szóló kapcsolatok kezdték meg fejlődésüket… Megérkeztünk Sárospatakra!</p>
-            
-            <p>Az első hivatalos tábori napon mindenki izgatottan ébredt, már az ébresztő előtt nagy nyüzsgés volt a táborban. A megnyitó ünnepséggel indult a program, ahol hagyományaink szerint elhelyeztük a földadományokat a Hármashalmon. Ezután megalakultak a csapatok, összesen öt: <strong>Vezetőképző, Várfelderítő – Kossuth-tiszt, Tűzpróba, Igric tiszt, Nemesifjak – Rákóczi-tiszt.</strong></p>
-            
-            <p>Az első csapatfoglalkozás ismerkedéssel és játékkal telt, majd az ebéd utáni délutáni foglalkozáson mindenki lelkesen kezdett a próbáján dolgozni. Délután egy Eszti által szervezett szuper sportversenyen vettek részt a táborozók, ahol megtanultak csapatként, együttműködve dolgozni.</p>
-            
-            <p>Szerda reggel városi sétára indultunk, ahol meglátogattuk a vízikaput, a Szent Erzsébet Bazilikát, ahol a Szövetség új tagjait avattuk fel, majd a kollégiumot, ahol rövid megemlékezést tartottunk a szabadságharcban harcoló diákok emléktáblája előtt.</p>
-            
-            <p>A csütörtöki napon kis csapatunkkal útnak indultunk a Magyar Kálváriához. A város nyüzsgése mögött egy barátságos, kanyargós hegyi ösvény vezetett felfelé. Fent, az emlékműnél a vezetők egy része megható előadással készült, amely mély nyomot hagyott bennünk.</p>
-            
-            <p>A pénteki napon az ébresztőt és a reggelit egy csapatfoglalkozás követte, majd elindultunk a már éves hagyománnyá vált túránkra a <strong>Megyer-hegyi tengerszemhez</strong>. Odafele busszal könnyítettük meg a melegben lévő gyaloglást.</p>
-            
-            <p>Szombaton reggel szokásainkhoz híven ellátogattunk a <strong>sárospataki Rákóczi-várba</strong>. Az idegenvezetői a vár helyiségeit bemutatva elkalauzolt bennünket a dicső múltba. Ezt követően sor került a nemesifjak avatási ünnepségére a Vörös-torony Lovagtermében.</p>
-            
-            <p>Borongós reggelre ébredtünk az utolsó napon, mintha az égiek is tudták volna, hogy közeledik a búcsúzás pillanata. A csapatok egymás után felsorakoztak a <strong>Hármashalom</strong> előtt, ahol a fogadalmak elhangzása után mindenki megkapta a heti munkáért járó jelvényét.</p>
-        ',
-        
-        '2025/1848' => '
-            <p>Szövetségünk ifi vezetőivel idén is megemlékeztünk a Március idusán történt eseményekről.</p>
-            
-            <p>Sétánkat a <strong>Kossuth mauzóleumnál</strong> kezdtük, meglátogattuk Karsa Ferenc, Klapka György, Batthyány Lajos, Görgey Artúr, Than Károly sírhelyét, majd megemlékezésünket a Petőfi család sírboltjánál zártuk!</p>
-            
-            <p>A séta során felidéztük a szabadságharc legfontosabb eseményeit és hőseinek életét. Különösen megható volt a Batthyány-mauzóleumnál tett látogatásunk, ahol az első felelős magyar miniszterelnökre emlékeztünk.</p>
-        ',
-        
-        '2024/tabor2024' => '
-            <p>2024. július 28-tól augusztus 4-ig ismét felfedezők lepték el a Magyarország Felfedezői Szövetség táborát Sárospatakon.</p>
-            
-            <p>Idén is változatos programokkal vártuk a táborozókat: csapatfoglalkozások, gátjátékok, kirándulások és próbák teljesítése töltötte ki a hetet. A hagyományokhoz híven ellátogattunk a Rákóczi-várba és a Tengerszem túra sem maradhatott el.</p>
-            
-            <p>A tábor záróünnepségén a Hármashalom előtt minden résztvevő megkapta a megérdemelt jelvényeket és elismeréseket.</p>
-        ',
-        
-        '2024/europanap' => '
-            <p>A Falvak Kultúrájáért Alapítvány, Aranyosapáti Alkotóház és Aranyos Sziget Gyermek és Ifjúsági tábor szervezésében az elhunyt Magyar Kultúra Lovagjaira emlékeztünk.</p>
-            
-            <p>Az Európai Kultúra Napja alkalmából tartott rendezvényen szövetségünk tagjai is részt vettek, felidézve azokat, akik életüket a magyar kultúra megőrzésének és ápolásának szentelték.</p>
-        ',
-        
-        '2023/tabor2023' => '
-            <p>2023. július 28-tól augusztus 5-ig ismét felfedezők lepték el a Magyarország Felfedezői Szövetség táborát.</p>
-            
-            <p>A tábor során számos izgalmas program várta a résztvevőket: túrák, játékok, kézműves foglalkozások és természetesen a hagyományos próbák teljesítése.</p>
-        ',
-        
-        '2023/oktober23' => '
-            <p>Október 23-án egy kellemes délutáni sétára indultunk a Nemzeti sírkertben, ahol 1956 hőseire emlékeztünk.</p>
-            
-            <p>A séta során felkerestük a forradalom és szabadságharc áldozatainak sírjait, felidézve a hősök emlékét és a szabadság iránti elkötelezettségüket.</p>
-        ',
-        
-        '2022/tabor2022' => '
-            <p>Két hosszú év kihagyás után, idén a Magyarország Felfedezői Szövetség sárospataki tábora újra megtelt élettel július 23 és július 30 között.</p>
-            
-            <p>Különösen örömteli volt az újratalálkozás, hiszen a járvány miatt hosszú ideje nem gyűlhettünk össze. A régi és új barátságok felelevenítése mellett természetesen a hagyományos programok sem maradtak el.</p>
-        ',
-        
-        '2019/30ymain' => '
-            <p>Harminc évvel ezelőtt, 1989 szeptemberében néhány lelkes pedagógus kezdeményezésére megalakult a Magyarország Felfedezői Szövetség.</p>
-            
-            <p>A jubileumi év alkalmából számos rendezvényen ünnepeltük a szövetség fennállásának 30. évfordulóját. Visszatekintettünk az elmúlt évtizedek legfontosabb eseményeire és eredményeire.</p>
-            
-            <p>A szövetség három évtized alatt több ezer gyermek és fiatal életét gazdagította, megismertetve őket hazánk történelmével, hagyományaival és természeti értékeivel.</p>
-        ',
-        
-        '2019/news3' => '
-            <p>Ezzel a mottóval szerveztünk vetélkedőt november 9-én, szombaton Erdély felfedezői számára Makfalván.</p>
-            
-            <p>A „Mert a Haza nem eladó" vetélkedőn a résztvevők történelmi tudásukat mérhették össze, miközben játékos formában ismerkedhettek meg nemzeti múltunk fontos eseményeivel.</p>
-        ',
-        
-        '2019/news1' => '
-            <p>Hálával és örömmel közöljük, hogy a kibédi Mátyus István Hagyományőrző Csapat az Örökség serleg elismerésében részesült.</p>
-            
-            <p>A kitüntetés a csapat éveken át tartó fáradhatatlan hagyományőrző munkáját ismeri el. Büszkék vagyunk rájuk!</p>
-        ',
-        
-        '2018/news1' => '
-            <p>Eseménydús, tartalmas októbere volt a Szent István utódai hagyományőrző csapatnak.</p>
-            
-            <p>Az őszi hónapokban számos megemlékezésen és programon vettek részt a csapat tagjai, folytatva a hagyományőrzés fontos munkáját.</p>
-        ',
-    ];
-    
-    return $contents[$slug] ?? '<p>' . htmlspecialchars($news['excerpt']) . '</p>';
-}
 
 ?>
 <!DOCTYPE html>
@@ -223,9 +208,6 @@ function getArticleContent(array $news): string
                     </div>
                     <h1 class="article-title"><?php echo htmlspecialchars($news['title']); ?></h1>
                 </header>
-
-                <!-- Featured Image -->
-                <img src="<?php echo img($news['image']); ?>" alt="<?php echo htmlspecialchars($news['title']); ?>" class="article-featured-image">
 
                 <!-- Article Content -->
                 <div class="article-content">

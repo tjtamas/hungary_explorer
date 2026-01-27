@@ -11,6 +11,8 @@ Március 10-én, a **Székely Szabadság napján** azokra a székely vértanúkr
 
 Iskolánkkal szemben három kopjafa áll e vértanúk emlékére, itt helyeztünk el székely szalagot a **Szent István utódai hagyományőrző csapat** tagjaival, énekszó kíséretében.
 
+![Erdélyi beszámoló ](../../images/gallery/2025/erdely/02.jpg)
+
 ## Március 15.
 
 Március 15-én az 1848–49-es szabadságharcra emlékeztünk énekekkel, versekkel, koszorú elhelyezésével a 13 aradi vértanú kopjafájánál. Ez alkalommal új csapattagot is avattunk **Simó Lehel** személyében. Örömmel fogadtuk csapatunkba!
@@ -25,6 +27,8 @@ A szomszéd településen, Erdőszentgyörgyön található **Rhédey-kastély**
 
 Mindezek mellett kéthetente tartunk csapatfoglalkozásokat, melyekre nagy lelkesedéssel jönnek olyan gyerekek is, akik még túl kicsik ahhoz, hogy felavassuk őket, de érdekli őket a szövetségi élet, és alig várják, hogy hivatalosan is csapattagok lehessenek!
 
+
+![Erdélyi beszámoló ](../../images/gallery/2025/erdely/07.jpg)
 ---
 
-📸 **[Nézd meg a képgalériát!](/pages/gallery/album.php?year=2025&album=erdely)**
+[📸 További képek a Képgalériában→](../../pages/gallery/album.php?year=2025&album=erdely)

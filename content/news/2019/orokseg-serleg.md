@@ -7,3 +7,7 @@ Az elismerést a **Falvak Kultúrájáért Alapítvány** és a **Magyarország 
 Mindez csapatunk alapítójának és fáradhatatlan vezetőjének, **Mátyus Ilona** nyugalmazott tanítónőnek az érdeme.
 
 Nagyon szépen köszönjük az elismerést, igyekszünk ezután is a díjhoz méltó módon ápolni és továbbadni magyarságunk kultúráját és hagyományainkat!
+
+![Örökség elismerés ](../../images/gallery/2019/heritage/24.jpg)
+
+[📸 További képek a Képgalériában→](../../pages/gallery/album.php?year=2019&album=heritage)

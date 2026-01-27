@@ -34,3 +34,5 @@ A pontszámok összeszámlálásánál derült ki, mennyire komolyan vette minde
 Mégsem ez volt a legnagyobb eredménye a vetélkedőnek, hanem az az öröm, amit a gyerekek arcán láttunk a találkozáskor, a vidám beszélgetések, nevetések. Hiszen a nyári táborokban már barátságok születtek, a hősök emléke mellett ezeket is ápoltuk, erősítettük most.
 
 Köszönjük a kibédi csapat vezetőjének, **Szilveszter Eszternek**, hogy elkísérte csapatát!
+
+

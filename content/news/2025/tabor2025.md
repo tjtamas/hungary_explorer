@@ -6,6 +6,8 @@ Az első csapatfoglalkozás ismerkedéssel és játékkal telt, majd az ebéd ut
 
 Az erdélyiek délutáni gátjátékában megismerhettük Klárika és Nagyenyed történetét, valamint a két zsarnok, Trajtzig Fritzig és Bór Embukk bukását. Klárikáink gyönyörű szerelmes verset alkottak, minden csapat magas pontszámmal hagyta el azt az állomást. Az est zárásaként egy jó hangulatú napzárta, és meghitt tábortűz után a táborozók nyugovóra tértek.
 
+![2025-ös tábor ](../../images/gallery/2025/camp/10.jpg)
+
 ## Szerda
 
 Szerda reggel városi sétára indultunk, ahol meglátogattuk a vízikaput, a Szent Erzsébet Bazilikát, ahol a Szövetség új tagjait avattuk fel, majd a kollégiumot, ahol rövid megemlékezést tartottunk a szabadságharcban harcoló diákok emléktáblája előtt, és végül a szoborkertet, ahol egy rövid kis játék volt, amiben meg kellett keresni a csapatoknak néhány emlékszobrot.
@@ -20,6 +22,8 @@ Bár az emelkedő néhol próbára tette az erőnket, senki sem csüggedt el, a 
 
 A délután folyamán a csapatok folytatták választott próbájuk írását. A foglalkozást követően a gátjáték következett, amelyet a Felsőszeliek szerveztek – ezúttal az **aratás** témakörében.
 
+![2025-ös tábor ](../../images/gallery/2025/camp/09.jpg)
+
 ## Péntek
 
 A pénteki napon az ébresztőt és a reggelit egy csapatfoglalkozás követte, amit a táborozók ügyesen kihasználtak arra, hogy haladjanak a próbáikkal. Egy páran gyönyörű munkát végezve be is fejezték próbáikat.
@@ -32,6 +36,8 @@ Szombaton reggel szokásainkhoz híven ellátogattunk a **sárospataki Rákóczi
 
 A vármúzeum megtekintése után a táborozókat egy történelmi játék várta a várkertben. Ebéd után a gyerekek szabad délutánt kaptak. A hazaérkezést követően **Gyurka bácsi gátjátékára** került sor, ahol a táborozók betekintést nyerhettek a magyar honvédek életébe.
 
+![2025-ös tábor ](../../images/gallery/2025/camp/06.jpg)
+
 ## Záró nap
 
 Borongós reggelre ébredtünk, mintha az égiek is tudták volna, hogy közeledik a búcsúzás pillanata. A délelőtt csapatfoglalkozással telt, mindenki az utolsó simításokat végezte a próbáján.
@@ -40,6 +46,7 @@ A délután hátralévő része a levélírásról, illetve a záróünnepségre
 
 Vacsora után elérkezett az utolsó napzárta és tábortűz, amit régi szokásunk szerint egy nagy körben egymás kezét fogva zártunk le.
 
----
 
-📸 **[Nézd meg a tábor teljes képgalériáját!](/pages/gallery/album.php?year=2025&album=camp)**
+![2025-ös tábor ](../../images/gallery/2025/camp/05.jpg)
+---
+[📸 További képek a Képgalériában→](../../pages/gallery/album.php?year=2025&album=camp)
