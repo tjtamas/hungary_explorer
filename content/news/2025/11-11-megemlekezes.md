@@ -8,13 +8,12 @@ Rövid történeti összefoglaló után **Soják Emese** felolvasta Vágány Jó
 
 A mécsesek meggyújtása után elénekelték a *„Mondták már rég nekem..."* kezdetű dalt, majd a megemlékezést **Bodonyi András: Felvidéki induló** c. énekével zárták.
 
----
+![Megemlékezés ](../../images/gallery/2025/memorial/01.jpg)
 
 Tisztelettel adóztak azokért a hősökért, akik életükkel fizettek, hogy a későbbi generációknak, így nekünk is, jobb legyen a sorsunk.
 
 **A béke törékeny jószág, vigyázni kell rá, és sok jócselekedettel erősíteni, hogy megmaradjon nekünk.**
 
-*Mészáros Magdolna*
-```
+**Szerző:** Mészáros Magdolna
 
----
+[📸 További képek a Képgalériában→](../../pages/gallery/album.php?year=2025&album=memorial)

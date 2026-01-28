@@ -12,6 +12,8 @@ Meggyőződéssel mondtuk együtt Palágyi Lajos versének sorait:
 
 > „Az igét, melyért éltet áldozának, / Szívébe írták az egész hazának, / Utódtól fogja hű utód tanulni, / Hogyan kell élni, s hogy lehet meghalni."
 
+![Megemlékezés ](../../images/gallery/2018/presentation/06.jpg)
+
 ## Október 23. - 1956-os forradalom
 
 Szomorú, de fontos eseménye a magyar történelemnek **1956. október 23.** A forradalom eseményeit éltük át abban a történelmi játékban, melyet a szabadban szerveztünk meg.
@@ -27,6 +29,9 @@ A gyerekek csapatokban, dalolva járták végig a játék állomásait:
 
 Következő tevékenységünket **Gegesben** tartottuk az Almafesztiválon. A csapat nyolcadikos diákjai néptánccal örvendeztették meg a gegesieket, majd állomásos játékot vezettek le a kisgyerekek számára a híres gegesi almafajtákról.
 
+![Megemlékezés ](../../images/gallery/2018/presentation/14.jpg)
+
+
 ## November - Márton-nap
 
 Novemberi első tevékenységünk Márton-napjához kapcsolódott. A Márton-nap eredetét, a hozzá kapcsolódó szokásokat kutattuk játékos feladatokkal:
@@ -37,6 +42,7 @@ Novemberi első tevékenységünk Márton-napjához kapcsolódott. A Márton-nap
 
 Lelkesen, kíváncsian készülünk a következő tevékenységekre is, hogy játszva, nevetve, dalolva tanulhassunk magyarságunkról, értékeinkről.
 
----
 
-*Bereczki Erzsébet*
+**Szerző:** *Bereczki Erzsébet*
+
+[📸 További képek a Képgalériában→](../../pages/gallery/album.php?year=2018&album=presentation)

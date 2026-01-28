@@ -6,17 +6,22 @@ A vasárnap délelőtti tábormegnyitó ünnepségen felzendült a mindenki ált
 
 Az idei évben **4 csapatot** alkottunk: **Vándordiák és Várfelderítő, Rákóczi tiszt és Nemesifjak, Kossuth tiszt és Kossuth regimentje, Örstiszt és Zászlóaljtiszti**.
 
+
 ## Hétfő - Városi séta
 
 Reggel lelkesen indultunk városi sétára, útközben **Pista bácsi** egy-egy fontos helyen rövid előadást tartott: vízikapu, református kollégium, Józseffalva városrész. A Vízikapu melletti szabadtéri színpadon a gyerekek előadták a Nemzeti dalt.
 
 Késő délután az Erdélyből érkező csapat örvendeztette meg a tábort egy gátjátékkal, amely során a Honfoglalás mondavilágába kalauzoltak minket.
 
+![2022-es tábor ](../../images/gallery/2022/camp/07.jpg)
+
 ## Kedd - Regéc vára
 
 Buszos kirándulásra indultunk **Regéc várába**. A várhoz vezető úton az ifivezetők II. Rákóczi Ferenc fejedelem ifjúkorához kapcsolódó játékkal lepték meg a gyerekeket. Titkos üzenetet kellett megfejteniük és eljuttatniuk Zrínyi Ilonának.
 
 A táborba visszatérve Petőfivel kapcsolatos játékon vehettünk részt, kiderült, hogy valóságos költők táboroznak velünk Patakon.
+
+![2022-es tábor ](../../images/gallery/2022/camp/06.jpg)
 
 ## Szerda - Tengerszem-túra
 
@@ -40,10 +45,6 @@ Pista bácsi záróbeszéde után kivonultak a zászlók a Kossuth-nóta másodi
 
 A tábortűz körül egy nagy körbe állunk és egymás kezét fogva elmondjuk, mit vinnénk haza a táborból. Idén sokan vitték volna haza a tábori jó hangulatot, a csapatukat, vagy egy-egy új barátjukat.
 
----
+**Szerző:** Bukor Edina
 
-*Bukor Edina*
-
----
-
-📸 **[Nézd meg a tábor teljes képgalériáját!](/pages/gallery/album.php?year=2022&album=camp)**
+[📸 További képek a Képgalériában→](../../pages/gallery/album.php?year=2022&album=camp)

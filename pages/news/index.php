@@ -167,6 +167,7 @@ $activeRegistration = getActiveRegistration();
                     </div>
                 <?php else: ?>
                     <?php foreach ($newsItems as $index => $news): 
+                        if ($news['hide_in_news_list'] ?? false) continue;
                         $categoryInfo = getCategoryInfo($news['category']);
                     ?>
                         <article class="news-card-large fade-in" style="animation-delay: <?php echo $index * 0.05; ?>s;">

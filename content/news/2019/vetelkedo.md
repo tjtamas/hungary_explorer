@@ -19,6 +19,9 @@ A vetélkedő feladatai a szabadságharc végének eseményeit foglalták össze
 - A vértanúk nevét rakták ki, párosítva a vezetéknevet a keresztnévvel
 - Rejtvényt fejtettek az aradi eseményekkel kapcsolatosan
 
+
+![Vetélkedő ](../../images/gallery/2019/quiz/01.jpg)
+
 ## Eredmények
 
 A pontszámok összeszámlálásánál derült ki, mennyire komolyan vette mindenik csapat a feladatot: nagyon szoros eredmények születtek!
@@ -35,4 +38,4 @@ Mégsem ez volt a legnagyobb eredménye a vetélkedőnek, hanem az az öröm, am
 
 Köszönjük a kibédi csapat vezetőjének, **Szilveszter Eszternek**, hogy elkísérte csapatát!
 
-
+[📸 További képek a Képgalériában→](../../pages/gallery/album.php?year=2019&album=quiz)

@@ -36,13 +36,14 @@ $tpl->set('pageTitle', 'Kezdőlap')
 $tpl->set('bannerTitle', 'A Szövetségről')
     ->set('bannerQuote', SITE_TAGLINE)
     ->set('bannerText', 'Szövetségünk 1989. szeptemberében alakult. Gyermekek, fiatalok, felnőttek szervezete vagyunk. Szövetséget kötöttünk a szülőföld, a haza felfedezésére, nemzeti értékeink, hagyományaink megőrzésére, az igaz emberi értékek követésére, a gyermek ember igaz értékek menti jellemformálására, a közösségi élet ajándékosztó erejének építésére.')
-    ->set('bannerImage', img('team.jpg'))
+    ->set('bannerImage', img('about/team.jpg'))
     ->set('bannerImageAlt', 'Magyarország Felfedezői Szövetség csoportkép')
     ->set('bannerButtonText', 'Tovább')
     ->set('bannerButtonLink', url('pages/about.php'));
 
 // Get latest 3 news items
 $allNews = getNewsItems();
+$allNews = array_filter($allNews, fn($item) => !($item['hide_in_news_list'] ?? false));
 $latestNews = array_slice($allNews, 0, 3);
 
 // Transform to template format
@@ -80,7 +81,7 @@ $stats = [
     ],
     [
         'icon' => '🏕️',
-        'number' => '35',
+        'number' => '30+',
         'label' => 'Tábor'
     ]
 ];
@@ -156,7 +157,7 @@ $tpl->set('stats', $stats);
                         <h2 class="section-title">Híreink</h2>
                         <div class="section-underline"></div>
                     </header>
-
+ 
                     <div class="news-grid">
                         <?php if (empty($newsItems)): ?>
                             <p class="no-news">Jelenleg nincsenek hírek.</p>
@@ -186,15 +187,21 @@ $tpl->set('stats', $stats);
                             <?php endforeach; ?>
                         <?php endif; ?>
                     </div>
+                      <div style="text-align: center; margin-top: 3rem;">
+                        <a href="<?php echo url('pages/news'); ?>" style="color: var(--text-light, #7f888f); text-decoration: none; font-size: 1rem; font-weight: 600; transition: color 0.2s;">
+                            További hírek →
+                        </a>
+                    </div>
                 </section>
 
             </div>
         </main>
-
         <!-- Sticky Sidebar -->
         <?php $tpl->render('sidebar'); ?>
 
     </div>
+<?php $tpl->render('bottom-logo'); ?>
+
 
     <!-- Footer -->
     <footer id="footer" class="site-footer">

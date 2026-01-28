@@ -1,6 +1,6 @@
 <!-- Header with Top Navigation -->
 <header id="header" class="site-header">
-    <div class="header-top" style="background-image: url('<?php echo img("logo/header_background3.png"); ?>');">
+    <div class="header-top" style="background-image: url('<?php echo img("logo/drawing.svg"); ?>');">
         <div class="header-container">
             <!-- Logo -->
             <a href="<?php echo url(''); ?>" class="logo-link">

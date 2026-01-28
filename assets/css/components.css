@@ -679,6 +679,26 @@
     padding: var(--space-3xl, 6rem) 0;
 }
 
+
+/* ============================================
+   Bottom
+   ============================================ */
+
+.bottom-logo {
+    display: flex;
+    justify-content: center;
+    padding: 4rem 1rem 2rem;
+    background: var(--bg-secondary);
+}
+
+.bottom-logo img {
+    max-width: 65%;
+    width: 100%;
+    height: auto;
+    opacity: 0.95;
+}
+
+
 /* ============================================
    SIDEBAR
    ============================================ */
@@ -1206,90 +1226,40 @@
     font-weight: 600;
 }
 
-/* Registration Button - FANCY */
-.btn-registration-fancy {
+/* Registration Button */
+.btn-registration {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 12px;
+    gap: 8px;
     width: 100%;
-    padding: 16px 24px;
-    background: linear-gradient(135deg, #ffd700 0%, #ffed4e 50%, #ffd700 100%);
-    background-size: 200% 100%;
-    color: #c2185b;
+    padding: 12px 20px;
+    background: #fff;
+    color: #e91e63;
     border: none;
-    border-radius: 50px;
-    font-weight: 900;
-    font-size: 1.1rem;
+    border-radius: 25px;
+    font-weight: 700;
+    font-size: 1rem;
     text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: all 0.4s ease;
-    box-shadow: 
-        0 4px 15px rgba(255, 215, 0, 0.4),
-        0 0 0 0 rgba(255, 215, 0, 0.6),
-        inset 0 2px 10px rgba(255, 255, 255, 0.5);
-    position: relative;
-    overflow: hidden;
-    animation: button-mega-pulse 2s ease-in-out infinite;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    animation: button-pulse 2s ease-in-out infinite;
 }
 
-.btn-registration-fancy::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.5);
-    transform: translate(-50%, -50%);
-    transition: width 0.6s, height 0.6s;
-}
-
-.btn-registration-fancy:hover::before {
-    width: 300px;
-    height: 300px;
-}
-
-.btn-registration-fancy:hover {
-    background-position: 100% 0;
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 
-        0 8px 25px rgba(255, 215, 0, 0.6),
-        0 0 30px rgba(255, 215, 0, 0.8),
-        inset 0 2px 15px rgba(255, 255, 255, 0.7);
+.btn-registration:hover {
+    background: #ffd700;
+    color: #c2185b;
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
     animation: none;
 }
 
-.btn-registration-fancy:active {
-    transform: translateY(-1px) scale(1.03);
-}
-
-.btn-icon {
-    font-size: 1.4rem;
-    animation: icon-fire 1s ease-in-out infinite;
-    z-index: 1;
-}
-
-.btn-text {
-    font-family: 'Roboto Slab', serif;
-    z-index: 1;
-}
-
-.btn-arrow {
-    font-size: 1.4rem;
-    font-weight: bold;
+.btn-registration i {
     transition: transform 0.3s ease;
-    z-index: 1;
 }
 
-.btn-registration-fancy:hover .btn-arrow {
-    transform: translateX(8px);
-}
-
-.btn-registration-fancy:hover .btn-icon {
-    animation: icon-fire-fast 0.5s ease-in-out infinite;
+.btn-registration:hover i {
+    transform: translateX(5px);
 }
 
 /* ============================================
@@ -1377,46 +1347,6 @@
     50% {
         transform: scale(1.03);
         box-shadow: 0 4px 20px rgba(255, 215, 0, 0.4);
-    }
-}
-
-/* Button Mega Pulse */
-@keyframes button-mega-pulse {
-    0%, 100% {
-        transform: scale(1);
-        box-shadow: 
-            0 4px 15px rgba(255, 215, 0, 0.4),
-            0 0 0 0 rgba(255, 215, 0, 0.6),
-            inset 0 2px 10px rgba(255, 255, 255, 0.5);
-    }
-    50% {
-        transform: scale(1.04);
-        box-shadow: 
-            0 6px 25px rgba(255, 215, 0, 0.6),
-            0 0 20px rgba(255, 215, 0, 0.8),
-            inset 0 2px 15px rgba(255, 255, 255, 0.7);
-    }
-}
-
-/* Fire Icon Animation */
-@keyframes icon-fire {
-    0%, 100% {
-        transform: scale(1) rotate(0deg);
-    }
-    25% {
-        transform: scale(1.1) rotate(-5deg);
-    }
-    75% {
-        transform: scale(1.1) rotate(5deg);
-    }
-}
-
-@keyframes icon-fire-fast {
-    0%, 100% {
-        transform: scale(1) rotate(0deg);
-    }
-    50% {
-        transform: scale(1.2) rotate(10deg);
     }
 }
 

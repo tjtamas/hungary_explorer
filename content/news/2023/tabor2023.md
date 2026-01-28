@@ -12,11 +12,15 @@ Az idei évben **5 csapat** alakult: **Igric tiszt, Rákóczi tiszt és Nemes if
 
 A délutánt Magdi néni gátjátékával folytattuk, ami az 1848/49-es szabadságharchoz és Petőfi Sándorhoz kapcsolódott. Mindenki megörült, hogy újra megkóstolhatta a híres szeli mákos pogácsát.
 
+![2023-as tábor ](../../images/gallery/2023/camp/19.jpg)
+
 ## Hétfő - Sportjáték és táncház
 
 Reggel korán keltünk, hiszen Eszter által szervezett sportjátékon vettünk részt. A finom meleg ebéd ledolgozásában **Pista bácsi** gondoskodott, hiszen megtartottuk az első tábori táncházunkat. Különböző tájegységek táncait ismerhettük meg.
 
 Ezután **Gyurka bácsi** gátjátéka következett, melyben egy magyar honvéd feladataiba élhettük bele magunkat.
+
+![2023-as tábor ](../../images/gallery/2023/camp/21.jpg)
 
 ## Kedd - Szerencsi vár
 
@@ -34,11 +38,15 @@ A várlátogatás után várjátékon vettünk részt, melyben a táborozók a k
 
 Ebéd után kézműves foglalkozás kezdődött: nyakkendőt kötni, agyagozni, nemezt készíteni, kokárdát gyöngyből.
 
+![2023-as tábor ](../../images/gallery/2023/camp/29.jpg)
+
 ## Csütörtök - Tengerszem-túra
 
 Ellátogattunk a **tengerszemhez**. A séta közben rengeteg gólyát láttunk. Az út kissé fárasztó volt, de a kilátásért megérte felmenni a hegyre. A gyerekek még a tengerszem melletti kilátóba is felmentek.
 
 Az ebédet a városban fogyasztottuk el. Este az erdélyi csapat gátjátékán vehettünk részt, ami Petőfi Sándorról szólt.
+
+![2023-as tábor ](../../images/gallery/2023/camp/25.jpg)
 
 ## Péntek - Avatás
 
@@ -50,7 +58,7 @@ Vendégeket is köszönthettünk köreinkben - a régi jándi csapat alapító t
 
 Ezután mindenki körbeülhette utoljára a tábortüzet, egy nagy kört alkotván mindenki elmondta, mit vinne haza a táborból.
 
----
+![2023-as tábor ](../../images/gallery/2023/camp/07.jpg)
 
 **A beszámolót írták:** Fazakas Kinga, Bereczki Orsolya, Dobrí Anita, Dobosi Dóra, Bukor Anita, Oleár Zalán
 
@@ -58,6 +66,4 @@ Ezután mindenki körbeülhette utoljára a tábortüzet, egy nagy kört alkotv�
 
 **Szerkesztette:** Morvai Richárd
 
----
-
-📸 **[Nézd meg a tábor teljes képgalériáját!](/pages/gallery/album.php?year=2023&album=camp)**
+[📸 További képek a Képgalériában→](../../pages/gallery/album.php?year=2023&album=camp)

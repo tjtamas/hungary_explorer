@@ -4,8 +4,9 @@ Október 23-án egy kellemes délutáni sétára indultunk a **Nemzeti sírkertb
 
 Fiatal vezetőink megemlékezése után koszorút helyeztünk el, majd meghallgattuk **Gyurka bácsi** személyes emlékeit, így megtudhattuk, hogy egy 6 éves gyermek hogy élte meg az októberi eseményeket.
 
-Nagyon köszönöm ifi vezetőink szervezését! Remélem egy hagyományteremtő rendezvényt tudunk útjára indítani.
+![Megemlékezés ](../../images/gallery/2023/memorial/08.jpg)
 
----
+**Nagyon köszönöm ifi vezetőink szervezését! Remélem egy hagyományteremtő rendezvényt tudunk útjára indítani.**
 
-📸 **[Nézd meg a képgalériát!](/pages/gallery/album.php?year=2023&album=oktober)**
+
+[📸 További képek a Képgalériában→](../../pages/gallery/album.php?year=2023&album=memorial)

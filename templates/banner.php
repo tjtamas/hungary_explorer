@@ -21,10 +21,10 @@
         </div>
 
         <div class="banner-image-wrapper">
-            <div class="banner-image lightbox-trigger">
+            <div class="banner-image ">
                 <img 
                     id="nagykep" 
-                    src="<?php echo $this->e($this->get('bannerImage', img('DSC_2546.jpg'))); ?>" 
+                    src="<?php echo $this->e($this->get('bannerImage', img('about/team.jpg'))); ?>" 
                     alt="<?php echo $this->e($this->get('bannerImageAlt', 'Magyarország Felfedezői Szövetség csoportkép')); ?>"
                     loading="lazy"
                 >
