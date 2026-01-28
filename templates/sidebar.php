@@ -113,7 +113,7 @@
                     <li><a href="<?php echo url('pages/about.php'); ?>"><i class="fas fa-info-circle"></i> Rólunk</a></li>
                     <li><a href="<?php echo url('pages/gallery'); ?>"><i class="fas fa-images"></i> Galéria</a></li>
                     <li><a href="<?php echo url('pages/contact.php'); ?>"><i class="fas fa-envelope"></i> Kapcsolat</a></li>
-                    <li><a href="<?php echo url('adatkezeles/adatkezeles.pdf'); ?>"><i class="fas fa-shield-alt"></i> Adatvédelem</a></li>
+                    <li><a href="<?php echo url('gdpr/adatkezeles.pdf'); ?>"><i class="fas fa-shield-alt"></i> Adatvédelem</a></li>
                 </ul>
             </div>
         </div>

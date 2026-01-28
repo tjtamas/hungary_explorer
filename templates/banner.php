@@ -13,7 +13,7 @@
             
             <ul class="banner-actions">
                 <li>
-                    <a href="<?php echo $this->e($this->get('bannerButtonLink', url('include/rolunk'))); ?>" class="btn btn-primary">
+                    <a href="<?php echo $this->e($this->get('bannerButtonLink', url('pages/about.php'))); ?>" class="btn btn-primary">
                         <?php echo $this->e($this->get('bannerButtonText', 'Tovább')); ?>
                     </a>
                 </li>
