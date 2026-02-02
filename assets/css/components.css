@@ -26,6 +26,10 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+     background-attachment: scroll;
+      position: relative;
+    will-change: auto;
+  
 }
 
 .header-container {
@@ -36,6 +40,10 @@
     justify-content: space-between;
     align-items: center;
     gap: 2rem;
+    flex-wrap: nowrap;
+    min-height: 0;
+    position: relative;
+    z-index: 10;
 }
 
 /* Logo */
@@ -43,15 +51,38 @@
     text-decoration: none;
     color: inherit;
     transition: var(--transition-base, 200ms ease-in-out);
+    min-width: 0;
+    flex-shrink: 1;
 }
 
 .logo-link:hover {
     opacity: 0.9;
 }
 
+.logo {
+    display: flex;
+    align-items: center;    /* Függőlegesen középre igazít mindent */
+    gap: 15px;              /* Egyenletes távolság az elemek között */
+    white-space: nowrap;    /* Megtiltja a sortörést a logón belül */
+    flex-shrink: 0;         /* A logó ne menjen össze, ha kevés a hely */
+}
+@supports (-webkit-appearance: none) {
+    .header-container {
+        transform: translateZ(0);
+        -webkit-transform: translateZ(0);
+    }
+}
+
+.logo-image {
+    height: 60px;           /* Állítsd be a kívánt méretre */
+    width: auto;
+    flex-shrink: 0;
+}
+
 .logo-text {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* A két sor szöveg egymás alatt marad */
+    line-height: 1.2;
 }
 
 .logo-title {
@@ -61,6 +92,9 @@
     color: var(--color-red, #c41e3a);
     line-height: 1.2;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
 .logo-subtitle {
@@ -71,6 +105,38 @@
     text-transform: uppercase;
     margin-top: 0.25rem;
 }
+
+@media screen and (max-width: 480px) {
+    .logo-title {
+        font-size: 0.9rem;
+    }
+   
+    .logo-image {
+        height: 40px;
+    }
+}
+
+@media screen and (max-width: 980px) {
+    .header-container {
+        gap: 0.5rem; /* Kisebb távolság a logó és a hamburger között */
+        padding: 1rem;
+    }
+
+    .logo {
+        gap: 8px; /* Szűkebb hely az embléma-szöveg-szarvas között */
+    }
+
+    .logo-title {
+        font-size: 1.1rem; /* Kisebb betű, hogy ne tolja el a szarvast */
+    }
+
+    
+
+    .logo-image {
+        height: 40px; /* Az embléma is legyen kisebb */
+    }
+}
+
 
 /* ============================================
    DESKTOP NAVIGATION
@@ -219,6 +285,8 @@
     border: none;
     cursor: pointer;
     padding: 0.5rem;
+    margin-left: 1rem;
+    flex-shrink: 0;
 }
 
 .hamburger span {
@@ -708,6 +776,7 @@
     padding: 0 1rem 0 2rem;
 }
 
+
 .sidebar-sticky {
     position: sticky;
     top: 100px;
@@ -956,6 +1025,8 @@
     }
 }
 
+
+
 /* ============================================
    RESPONSIVE - BANNER
    ============================================ */
@@ -978,6 +1049,14 @@
     .banner-image img {
         height: 100%;
         object-fit: cover;
+    }
+
+     .logo-image {
+        height: 45px;
+    }
+    
+    .logo {
+        gap: 0.75rem;
     }
 }
 
@@ -1004,6 +1083,14 @@
 
     .banner-image {
         max-height: 300px;
+    }
+
+     .logo-image {
+        height: 40px;
+    }
+    
+    .logo {
+        gap: 0.5rem;
     }
 }
 
@@ -1110,18 +1197,21 @@
    ============================================ */
 
 @media screen and (max-width: 1280px) {
-    .sidebar-widget {
-        display: none;
+    .sidebar-widget:not(.mobile-footer) {
+        display: none !important;
     }
 }
 
 @media screen and (max-width: 1280px) {
     .sidebar-widget.mobile-footer {
-        display: block;
+        display: block !important;
+        position: static;
+        transform: none;
         width: 100%;
         max-width: 600px;
         margin: 0 auto;
         padding: 2rem 1rem;
+        box-shadow: none;
     }
 
     .sidebar-sticky {

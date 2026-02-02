@@ -216,17 +216,6 @@
   );
 }
 
-/* ============================================
-   DARK MODE (optional - ha később kell)
-   ============================================ */
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* Ha dark mode-ot is akarsz később */
-    --bg-primary: #1a1a1a;
-    --text-dark: #ffffff;
-    /* stb... */
-  }
-}
 
 /* ============================================
    UTILITY CLASSES using variables

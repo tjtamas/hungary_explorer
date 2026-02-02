@@ -231,7 +231,7 @@ $activeRegistration = getActiveRegistration();
                                        id="agreement" 
                                        name="agreement" 
                                        class="form-checkbox"
-                                       required>
+                                       >
                                 <label for="agreement" class="form-checkbox-label">
                                     <strong>Hozzájárulok</strong>, hogy a tábor ideje alatt rólam kép és videóanyag készülhessen, 
                                     amit a szövetség nyilvánosan felhasználhat promóciós és dokumentációs céllal.
@@ -314,21 +314,40 @@ $activeRegistration = getActiveRegistration();
                 // Collect form data
                 const formData = new FormData(form);
                 
-                // TODO: AJAX call to process.php
-                // fetch('process.php', { ... })
-                
-                // Temporary success message (remove when backend is ready)
-                setTimeout(() => {
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Sikeres jelentkezés!',
-                        text: 'Köszönjük a jelentkezésedet! Hamarosan keresünk.',
-                        confirmButtonText: 'Rendben'
-                    }).then(() => {
-                        form.reset();
-                        form.classList.remove('was-validated');
-                    });
-                }, 1500);
+              fetch('<?php echo url("pages/tabor/process.php"); ?>', {
+    method: 'POST',
+    body: formData
+})
+.then(response => response.json())
+.then(data => {
+    if (data.success) {
+        Swal.fire({
+            icon: 'success',
+            title: 'Sikeres jelentkezés!',
+            text: data.message,
+            confirmButtonText: 'Rendben'
+        }).then(() => {
+            form.reset();
+            form.classList.remove('was-validated');
+        });
+    } else {
+        Swal.fire({
+            icon: 'error',
+            title: 'Hiba történt',
+            text: data.message,
+            confirmButtonText: 'Rendben'
+        });
+    }
+})
+.catch(error => {
+    Swal.fire({
+        icon: 'error',
+        title: 'Kapcsolódási hiba',
+        text: 'Nem sikerült elküldeni a jelentkezést. Próbáld újra!',
+        confirmButtonText: 'Rendben'
+    });
+});
+               
             });
         }
     });

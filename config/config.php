@@ -48,8 +48,7 @@ $host = $_SERVER['HTTP_HOST'] ?? 'localhost';
 
 // Fixed base URL - ne a script path-ot használjuk, hanem fix értéket
 
-
-$basePath = '';  // <-- Ha gyökérben van, legyen ''
+$basePath = '/Webpage';  // <-- Ha gyökérben van, legyen ''
 $baseUrl = $protocol . $host . $basePath;
 
 define('BASE_URL', rtrim($baseUrl, '/'));
@@ -63,19 +62,10 @@ define('IMAGES_URL', BASE_URL . '/images');
 define('SITE_NAME', 'Magyarország Felfedezői Szövetség');
 define('SITE_TAGLINE', '"Őseim országot szereztek, én Szülőföldemet teszem hazámmá"');
 define('SITE_DESCRIPTION', 'Gyermekek, fiatalok és felnőttek közössége 1989 óta');
-define('CONTACT_EMAIL', 'info@magyarorszagfelfedezoi.hu');
+// define('CONTACT_EMAIL', 'info@magyarorszagfelfedezoi.hu');
 define('FACEBOOK_PAGE', 'https://www.facebook.com/Magyarország-Felfedezői-Szövetség-176863082418183/');
 define('SZJA_TAX_NUMBER', '19624772-1-05');
 
-// ============================================
-// DATABASE CONFIGURATION (Ha később kell)
-// ============================================
-
-define('DB_HOST', 'localhost');
-define('DB_NAME', 'felfedezok_db');
-define('DB_USER', 'root');
-define('DB_PASS', '');
-define('DB_CHARSET', 'utf8mb4');
 
 // ============================================
 // DATE & TIME
@@ -251,27 +241,29 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
+
+
 // ============================================
-// MAINTENANCE MODE CHECK
+// Database Configuration - NETHELY.HU
+
+define('DB_HOST', 'mysql.nethely.hu');
+define('DB_NAME', 'mfe_db');
+define('DB_USER', 'mfe_db');
+define('DB_PASSWORD', 'Ajw8q]jxy)J*]mPCae74'); 
+
+// ============================================
+// Camp  registratrion settings 
 // ============================================
 
-if (MAINTENANCE_MODE && !DEBUG_MODE) {
-    http_response_code(503);
-    echo '<!DOCTYPE html>
-<html lang="hu">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Karbantartás - ' . SITE_NAME . '</title>
-    <style>
-        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; background: #f5f6f7; }
-        h1 { color: ' . COLOR_PRIMARY . '; }
-    </style>
-</head>
-<body>
-    <h1>🔧 Karbantartás alatt</h1>
-    <p>Weboldalunk jelenleg karbantartás alatt áll. Hamarosan visszatérünk!</p>
-</body>
-</html>';
-    exit;
-}
+define('REGISTRATION_ENABLED', true); 
+define('MAX_REGISTRATIONS', 150);     
+define('REGISTRATION_START_DATE', '2026-01-01'); 
+define('REGISTRATION_END_DATE', '2026-07-30');   
+
+// ============================================
+// EMAIL Config
+// ============================================
+
+define('CONTACT_EMAIL', 'tothjanostamas@gmail.com');
+define('FROM_EMAIL', 'no-reply@magyarorszagfelfedezoi.hu');
+define('SMTP_ENABLED', false); 

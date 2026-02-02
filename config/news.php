@@ -20,12 +20,7 @@ define('NEWS_CATEGORIES', [
         'icon' => 'fas fa-campground',
         'color' => 'green'
     ],
-    'jelentkezes' => [
-        'name' => 'Jelentkezés',
-        'icon' => 'fas fa-user-plus',
-        'color' => 'red'
-    ],
-    'megemlekezes' => [
+      'megemlekezes' => [
         'name' => 'Megemlékezés',
         'icon' => 'fas fa-flag',
         'color' => 'gold'
@@ -35,11 +30,7 @@ define('NEWS_CATEGORIES', [
         'icon' => 'fas fa-calendar-alt',
         'color' => 'blue'
     ],
-    'program' => [
-        'name' => 'Program',
-        'icon' => 'fas fa-users',
-        'color' => 'purple'
-    ],
+  
 ]);
 
 // ============================================
@@ -75,7 +66,7 @@ define('NEWS_ITEMS', [
         'title' => 'Magyar Kálvárián járt csapatunk',
         'date' => '2025-10-23',
         'year' => 2025,
-        'category' => 'program',
+        'category' => 'esemeny',
         'image' => 'gallery/2025/camp/06.jpg',
         'excerpt' => 'A felsőszeli Bercsényi Miklós Hagyományőrző Csapat tagjai emléktúrán vettek részt a sátoraljaújhelyi Magyar Kálvárián.',
         'featured' => false,

@@ -121,26 +121,17 @@ class ScrollAnimator {
 class MobileMenu {
     constructor() {
         this.hamburger = document.getElementById('hamburger');
-        this.sidebar = document.getElementById('sidebar');
-        this.overlay = null;
+        this.mobileNav = document.getElementById('mobileNav');
         this.isOpen = false;
     }
 
     init() {
-        if (!this.hamburger || !this.sidebar) return;
-
-        // Create overlay
-        this.createOverlay();
+        if (!this.hamburger || !this.mobileNav) return;
 
         // Toggle on hamburger click
         this.hamburger.addEventListener('click', (e) => {
             e.stopPropagation();
             this.toggle();
-        });
-
-        // Close on overlay click
-        this.overlay.addEventListener('click', () => {
-            this.close();
         });
 
         // Close on ESC key
@@ -152,28 +143,28 @@ class MobileMenu {
 
         // Close on window resize (if going to desktop)
         window.addEventListener('resize', Utils.debounce(() => {
-            if (window.innerWidth > 1280 && this.isOpen) {
+            if (window.innerWidth > 1024 && this.isOpen) {
                 this.close();
             }
         }, 250));
-    }
 
-    createOverlay() {
-        this.overlay = document.createElement('div');
-        this.overlay.className = 'sidebar-overlay';
-        this.overlay.style.cssText = `
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 9999;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s, visibility 0.3s;
-        `;
-        document.body.appendChild(this.overlay);
+        // Handle mobile submenu openers
+        const openers = this.mobileNav.querySelectorAll('.mobile-opener');
+        openers.forEach(opener => {
+            opener.addEventListener('click', (e) => {
+                e.preventDefault();
+                const submenu = opener.nextElementSibling;
+                const isActive = opener.classList.contains('active');
+
+                if (isActive) {
+                    opener.classList.remove('active');
+                    submenu.classList.remove('active');
+                } else {
+                    opener.classList.add('active');
+                    submenu.classList.add('active');
+                }
+            });
+        });
     }
 
     toggle() {
@@ -181,21 +172,18 @@ class MobileMenu {
     }
 
     open() {
-        this.sidebar.classList.remove('inactive');
-        this.overlay.style.opacity = '1';
-        this.overlay.style.visibility = 'visible';
-        document.body.style.overflow = 'hidden';
+        this.mobileNav.classList.add('active');
+        this.hamburger.classList.add('active');
         this.isOpen = true;
     }
 
     close() {
-        this.sidebar.classList.add('inactive');
-        this.overlay.style.opacity = '0';
-        this.overlay.style.visibility = 'hidden';
-        document.body.style.overflow = '';
+        this.mobileNav.classList.remove('active');
+        this.hamburger.classList.remove('active');
         this.isOpen = false;
     }
 }
+
 
 // ============================================
 // SINGLE RESPONSIBILITY: Smooth Scroll Handler

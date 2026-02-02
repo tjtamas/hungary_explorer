@@ -1,15 +1,18 @@
 <!-- Header with Top Navigation -->
 <header id="header" class="site-header">
-    <div class="header-top" style="background-image: url('<?php echo img("logo/drawing.svg"); ?>');">
+    <div class="header-top" style="background-image: url('<?php echo img("logo/frame.png"); ?>');">
         <div class="header-container">
             <!-- Logo -->
             <a href="<?php echo url(''); ?>" class="logo-link">
-                <div class="logo">
-                    <span class="logo-text">
-                        <strong class="logo-title">Magyarország Felfedezői Szövetség</strong>
-                        <span class="logo-subtitle">Alapítva 1989</span>
-                    </span>
-                </div>
+          <div class="logo">
+    <img src="<?php echo img('logo/logo3.png'); ?>" alt="MFS Logo" class="logo-image">
+
+    <span class="logo-text">
+        <strong class="logo-title">Magyarország Felfedezői Szövetség</strong>
+        <span class="logo-subtitle">Alapítva 1989</span>
+    </span>
+
+</div>
             </a>
 
             <!-- Desktop Navigation -->

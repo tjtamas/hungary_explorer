@@ -69,11 +69,7 @@ $stats = [
         'number' => '35+',
         'label' => 'Év Tapasztalat'
     ],
-    [
-        'icon' => '🎒',
-        'number' => '5',
-        'label' => 'Aktív Csapat'
-    ],
+  
     [
         'icon' => '👥',
         'number' => '1000+',
@@ -197,7 +193,9 @@ $tpl->set('stats', $stats);
             </div>
         </main>
         <!-- Sticky Sidebar -->
-        <?php $tpl->render('sidebar'); ?>
+        <div class="sidebar-widget" id="sidebar">
+            <?php $tpl->render('sidebar'); ?>
+        </div>
 
     </div>
 <?php $tpl->render('bottom-logo'); ?>
