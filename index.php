@@ -41,6 +41,8 @@ $tpl->set('bannerTitle', 'A Szövetségről')
     ->set('bannerButtonText', 'Tovább')
     ->set('bannerButtonLink', url('pages/about.php'));
 
+// Get active registration for mobile card
+$activeRegistration = getActiveRegistration();
 // Get latest 3 news items
 $allNews = getNewsItems();
 $allNews = array_filter($allNews, fn($item) => !($item['hide_in_news_list'] ?? false));
@@ -131,6 +133,41 @@ $tpl->set('stats', $stats);
         <main id="main" class="main-content">
             <div class="content-inner">
 
+            <!-- MOBILE REGISTRATION CARD - Only visible on mobile BEFORE banner -->
+                <?php if ($activeRegistration): ?>
+                <div class="mobile-registration-card">
+                    <div class="widget registration-widget">
+                        <div class="widget-header registration-header">
+                            <h3>🔥 Jelentkezés</h3>
+                            <div class="widget-icon pulse-icon">🎒</div>
+                        </div>
+                        <div class="widget-content">
+                            <h4 class="registration-title"><?php echo htmlspecialchars($activeRegistration['title']); ?></h4>
+                            <p class="registration-text">
+                                <?php echo htmlspecialchars($activeRegistration['excerpt']); ?>
+                            </p>
+                            <div class="registration-details">
+                                <div class="registration-date">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <strong>Tábor:</strong> 
+                                    <?php echo date('Y. m. d.', strtotime($activeRegistration['camp_date_start'])); ?> - 
+                                    <?php echo date('m. d.', strtotime($activeRegistration['camp_date_end'])); ?>
+                                </div>
+                                <div class="registration-deadline">
+                                    <i class="fas fa-clock"></i>
+                                    <strong>Határidő:</strong> 
+                                    <?php echo date('Y. m. d.', strtotime($activeRegistration['registration_deadline'])); ?>
+                                </div>
+                            </div>
+                            <a href="<?php echo url('pages/news/registration.php'); ?>" class="btn-registration">
+                                <i class="fas fa-fire"></i>
+                                <span>Jelentkezz Most!</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <?php endif; ?>
                 <!-- Banner Section -->
                 <?php $tpl->render('banner'); ?>
 
@@ -218,9 +255,11 @@ $tpl->set('stats', $stats);
                     <h4>Gyors linkek</h4>
                     <ul class="footer-links">
                         <li><a href="<?php echo url('pages/about.php'); ?>">Rólunk</a></li>
-                        <li><a href="<?php echo url('pages/badges.php'); ?>">Jelvényeink</a></li>
                         <li><a href="<?php echo url('pages/gallery'); ?>">Képgaléria</a></li>
                         <li><a href="<?php echo url('pages/contact.php'); ?>">Kapcsolat</a></li>
+                         <a href="#" class="footer-login-link" onclick="document.getElementById('loginModal').style.display='flex'; return false;">
+                    <i class="fas fa-lock"></i> Belépés
+                        </a>                           
                     </ul>
                 </div>
 
@@ -246,6 +285,37 @@ $tpl->set('stats', $stats);
             </div>
         </div>
     </footer>
+      <div id="loginModal" class="login-modal-overlay" style="display:none;">
+        <div class="login-modal">
+            <button class="login-modal-close" onclick="document.getElementById('loginModal').style.display='none';">&times;</button>
+            
+            <div class="login-modal-icon">
+                <i class="fas fa-lock"></i>
+            </div>
+            
+            <h2 class="login-modal-title">Admin Belépés</h2>
+            
+            <div id="loginError" class="login-modal-error" style="display:none;">
+                <i class="fas fa-exclamation-circle"></i> Hibás felhasználónév vagy jelszó!
+            </div>
+            
+            <form id="loginForm" method="POST" action="<?php echo url('config/auth.php'); ?>">
+                <div class="login-modal-group">
+                    <label for="username">Felhasználónév</label>
+                    <input type="text" id="username" name="username" placeholder="admin" autocomplete="off" required>
+                </div>
+                
+                <div class="login-modal-group">
+                    <label for="password">Jelszó</label>
+                    <input type="password" id="password" name="password" placeholder="••••••••" required>
+                </div>
+                
+                <button type="submit" class="login-modal-btn">
+                    <i class="fas fa-sign-in-alt"></i> Belépés
+                </button>
+            </form>
+        </div>
+    </div>
 
     <!-- Scripts - Modern approach (NO jQuery!) -->
     <script src="<?php echo asset('js/app.js'); ?>"></script>

@@ -24,7 +24,7 @@
                 <div class="registration-details">
                     <div class="registration-date">
                         <i class="fas fa-calendar-alt"></i>
-                        <strong>Tábor:</strong> 
+                        
                         <?php echo date('Y. m. d.', strtotime($activeRegistration['camp_date_start'])); ?> - 
                         <?php echo date('m. d.', strtotime($activeRegistration['camp_date_end'])); ?>
                     </div>
@@ -34,12 +34,11 @@
                         <?php echo date('Y. m. d.', strtotime($activeRegistration['registration_deadline'])); ?>
                     </div>
                 </div>
-                  <a href="<?php echo url('pages/news/registration.php'); ?>" 
-                      class="btn-registration-fancy">
-                    <span class="btn-icon">🔥</span>
-                     <span class="btn-text">Jelentkezz Most!</span>
-                    <span class="btn-arrow">→</span>
-                    </a>
+                <a href="<?php echo url('pages/news/registration.php'); ?>" class="btn-registration">
+    <i class="fas fa-fire"></i>
+    <span>Jelentkezz Most!</span>
+    <i class="fas fa-arrow-right"></i>
+</a>
             </div>
         </div>
         <?php endif; ?>

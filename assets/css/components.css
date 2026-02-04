@@ -983,6 +983,26 @@
     font-size: 1.1em;
 }
 
+.quick-links .login-link {
+    font-size: 0.75rem;
+    color: var(--text-light, #7f888f);
+    opacity: 0.6;
+    padding-top: 1rem;
+    margin-top: 0.5rem;
+    border-top: 1px dashed var(--border-light);
+}
+
+.quick-links .login-link:hover {
+    color: var(--color-red, #c41e3a);
+    opacity: 1;
+    padding-left: 0.5rem;
+}
+
+.quick-links .login-link i {
+    font-size: 0.8em;
+    color: var(--text-light, #7f888f);
+}
+
 /* ============================================
    RESPONSIVE - HEADER
    ============================================ */
@@ -1225,14 +1245,15 @@
 
 /* Registration Widget Container */
 .registration-widget {
-    background: linear-gradient(135deg, #e91e63 0%, #c2185b 100%);
+    background: linear-gradient(135deg, #5FA8D3 0%, #4A90E2 100%);
     border: none;
-    box-shadow: 0 4px 20px rgba(233, 30, 99, 0.3);
-    animation: pulse-glow 2s ease-in-out infinite, slide-in 0.5s ease-out;
+    box-shadow: 0 4px 20px rgba(74, 144, 226, 0.3);
+    animation: gentle-pulse-blue 3s ease-in-out infinite;
     position: relative;
     overflow: visible !important;
 }
 
+/* Finom kék árnyék */
 .registration-widget::before {
     content: '';
     position: absolute;
@@ -1240,28 +1261,26 @@
     left: -2px;
     right: -2px;
     bottom: -2px;
-    background: linear-gradient(45deg, #ff4081, #f50057, #ff4081);
+    background: linear-gradient(45deg, #6BB6E8, #4A90E2, #6BB6E8);
     border-radius: 1rem;
     z-index: -1;
-    animation: rotate-gradient 3s linear infinite;
-    opacity: 0.7;
+    animation: soft-glow-blue 4s ease-in-out infinite;
+    opacity: 0.5;
 }
 
 .registration-widget .widget-header {
     background: rgba(255, 255, 255, 0.15);
     border-bottom: 2px solid rgba(255, 255, 255, 0.3);
-    animation: shimmer 2s ease-in-out infinite;
 }
 
 .registration-widget .widget-header h3 {
     color: #fff;
     font-size: 1.3rem;
     font-weight: 700;
-    animation: text-glow 2s ease-in-out infinite;
 }
 
 .registration-widget .pulse-icon {
-    animation: bounce-rotate 1.5s ease-in-out infinite;
+    animation: gentle-bounce 2s ease-in-out infinite;
     font-size: 2rem;
     display: inline-block;
 }
@@ -1285,6 +1304,7 @@
     margin-bottom: 15px;
 }
 
+
 /* Registration Details */
 .registration-details {
     background: rgba(255, 255, 255, 0.1);
@@ -1295,11 +1315,12 @@
 
 .registration-details > div {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 8px;
     color: #fff;
     font-size: 0.9rem;
     margin-bottom: 8px;
+    flex-wrap: wrap;
 }
 
 .registration-details > div:last-child {
@@ -1307,9 +1328,10 @@
 }
 
 .registration-details i {
-    color: #ffd700;
+    color: #FFD700;
     width: 16px;
-    animation: icon-pulse 1.5s ease-in-out infinite;
+    animation: icon-gentle-pulse 2s ease-in-out infinite;
+    flex-shrink: 0;
 }
 
 .registration-details strong {
@@ -1324,23 +1346,23 @@
     gap: 8px;
     width: 100%;
     padding: 12px 20px;
-    background: #fff;
-    color: #e91e63;
+    background: linear-gradient(135deg, #1E3A5F 0%, #2E5C8A 100%);
+    color: #fff;
     border: none;
     border-radius: 25px;
     font-weight: 700;
     font-size: 1rem;
     text-decoration: none;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    animation: button-pulse 2s ease-in-out infinite;
+    box-shadow: 0 2px 10px rgba(30, 58, 95, 0.3);
+    animation: button-gentle-pulse-blue 3s ease-in-out infinite;
 }
 
 .btn-registration:hover {
-    background: #ffd700;
-    color: #c2185b;
+    background: linear-gradient(135deg, #2E5C8A 0%, #4A90E2 100%);
+    color: #fff;
     transform: translateY(-2px) scale(1.05);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 6px 20px rgba(30, 58, 95, 0.5);
     animation: none;
 }
 
@@ -1348,38 +1370,37 @@
     transition: transform 0.3s ease;
 }
 
-.btn-registration:hover i {
+.btn-registration:hover i:last-child {
     transform: translateX(5px);
 }
 
 /* ============================================
-   KEYFRAME ANIMATIONS
+   KEYFRAME ANIMATIONS - ÉGKÉK VERZIÓ
    ============================================ */
 
-/* Pulsing Glow with Expanding Ring */
-@keyframes pulse-glow {
+/* Finomabb Pulse - Kék */
+@keyframes gentle-pulse-blue {
     0%, 100% {
         box-shadow: 
-            0 4px 20px rgba(233, 30, 99, 0.4),
-            0 0 0 0 rgba(233, 30, 99, 0.6),
-            inset 0 0 20px rgba(255, 255, 255, 0.1);
+            0 4px 20px rgba(74, 144, 226, 0.3),
+            0 0 0 0 rgba(74, 144, 226, 0.4);
+        transform: scale(1);
     }
     50% {
         box-shadow: 
-            0 8px 40px rgba(233, 30, 99, 0.6),
-            0 0 0 15px rgba(233, 30, 99, 0),
-            inset 0 0 30px rgba(255, 255, 255, 0.2);
-        transform: scale(1.02);
+            0 6px 30px rgba(74, 144, 226, 0.4),
+            0 0 0 8px rgba(74, 144, 226, 0);
+        transform: scale(1.01);
     }
 }
 
-/* Rotating Gradient Border */
-@keyframes rotate-gradient {
-    0% {
-        filter: hue-rotate(0deg);
+/* Lágyabb glow - Kék */
+@keyframes soft-glow-blue {
+    0%, 100% {
+        opacity: 0.4;
     }
-    100% {
-        filter: hue-rotate(360deg);
+    50% {
+        opacity: 0.6;
     }
 }
 
@@ -1399,44 +1420,41 @@
         text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
     }
     50% {
-        text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 215, 0, 0.6);
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(74, 144, 226, 0.6);
     }
 }
 
-/* Bounce with Rotation */
-@keyframes bounce-rotate {
+/* Finomabb bounce */
+@keyframes gentle-bounce {
     0%, 100% {
         transform: translateY(0) rotate(0deg);
     }
-    25% {
-        transform: translateY(-8px) rotate(-10deg);
-    }
-    75% {
-        transform: translateY(-8px) rotate(10deg);
+    50% {
+        transform: translateY(-4px) rotate(5deg);
     }
 }
 
-/* Icon Pulse */
-@keyframes icon-pulse {
+/* Icon finomabb pulse */
+@keyframes icon-gentle-pulse {
     0%, 100% {
         transform: scale(1);
-        color: #ffd700;
+        opacity: 1;
     }
     50% {
-        transform: scale(1.2);
-        color: #ffed4e;
+        transform: scale(1.1);
+        opacity: 0.9;
     }
 }
 
-/* Button Pulse */
-@keyframes button-pulse {
+/* Button finomabb pulse - Kék */
+@keyframes button-gentle-pulse-blue {
     0%, 100% {
         transform: scale(1);
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 2px 10px rgba(30, 58, 95, 0.3);
     }
     50% {
-        transform: scale(1.03);
-        box-shadow: 0 4px 20px rgba(255, 215, 0, 0.4);
+        transform: scale(1.02);
+        box-shadow: 0 3px 15px rgba(74, 144, 226, 0.4);
     }
 }
 
@@ -1452,7 +1470,10 @@
     }
 }
 
-/* Responsive */
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
 @media (max-width: 768px) {
     .registration-widget {
         margin-bottom: 20px;
@@ -1473,5 +1494,63 @@
     
     .registration-widget::before {
         display: none; /* Remove gradient border on mobile for performance */
+    }
+}
+/* ============================================
+   MOBILE REGISTRATION CARD
+   ============================================ */
+
+.mobile-registration-card {
+    display: none;
+}
+
+@media (max-width: 1280px) {
+    .mobile-registration-card {
+        display: block;
+        margin: 2rem auto;
+        max-width: 600px;
+        padding: 0 1rem;
+    }
+    
+    .sidebar-widget .registration-widget {
+        display: none !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .mobile-registration-card {
+        max-width: 100%;
+        padding: 0 0.5rem;
+    }
+    
+    .registration-widget {
+        margin: 1rem 0;
+    }
+    
+    .registration-title {
+        font-size: 1rem;
+    }
+    
+    .registration-details > div {
+        font-size: 0.85rem;
+    }
+    
+    .btn-registration {
+        font-size: 0.95rem;
+        padding: 10px 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .registration-widget .widget-header h3 {
+        font-size: 1.1rem;
+    }
+    
+    .registration-text {
+        font-size: 0.9rem;
+    }
+    
+    .btn-registration {
+        font-size: 0.9rem;
     }
 }
