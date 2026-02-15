@@ -285,7 +285,8 @@ $tpl->set('stats', $stats);
             </div>
         </div>
     </footer>
-      <div id="loginModal" class="login-modal-overlay" style="display:none;">
+      <?php $loginError = isset($_GET['error']) ? true : false; ?>
+<div id="loginModal" class="login-modal-overlay" style="display:<?php echo $loginError ? 'flex' : 'none'; ?>;">
         <div class="login-modal">
             <button class="login-modal-close" onclick="document.getElementById('loginModal').style.display='none';">&times;</button>
             
@@ -295,9 +296,9 @@ $tpl->set('stats', $stats);
             
             <h2 class="login-modal-title">Admin Belépés</h2>
             
-            <div id="loginError" class="login-modal-error" style="display:none;">
+            <div id="loginError" class="login-modal-error" style="display:<?php echo $loginError ? 'block' : 'none'; ?>;"></div>
                 <i class="fas fa-exclamation-circle"></i> Hibás felhasználónév vagy jelszó!
-            </div>
+            </>
             
             <form id="loginForm" method="POST" action="<?php echo url('config/auth.php'); ?>">
                 <div class="login-modal-group">
