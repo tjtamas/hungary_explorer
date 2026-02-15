@@ -285,7 +285,7 @@ $tpl->set('stats', $stats);
             </div>
         </div>
     </footer>
-      <?php $loginError = isset($_GET['error']) ? true : false; ?>
+    <?php $loginError = isset($_GET['error']) && $_GET['error'] == '1'; ?>
 <div id="loginModal" class="login-modal-overlay" style="display:<?php echo $loginError ? 'flex' : 'none'; ?>;">
         <div class="login-modal">
             <button class="login-modal-close" onclick="document.getElementById('loginModal').style.display='none';">&times;</button>

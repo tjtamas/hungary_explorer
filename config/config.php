@@ -48,7 +48,7 @@ $host = $_SERVER['HTTP_HOST'] ?? 'localhost';
 
 // Fixed base URL - ne a script path-ot használjuk, hanem fix értéket
 
-$basePath = '/Webpage';  // <-- Ha gyökérben van, legyen ''
+$basePath = '/';  // <-- Ha gyökérben van, legyen ''
 $baseUrl = $protocol . $host . $basePath;
 
 define('BASE_URL', rtrim($baseUrl, '/'));
@@ -246,7 +246,7 @@ if (session_status() === PHP_SESSION_NONE) {
 // ============================================
 // Database Configuration - NETHELY.HU
 
-define('DB_HOST', 'mysql.nethely.hu');
+define('DB_HOST', 'localhost');
 define('DB_NAME', 'mfe_db');
 define('DB_USER', 'mfe_db');
 define('DB_PASSWORD', 'Ajw8q]jxy)J*]mPCae74'); 
