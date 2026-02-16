@@ -27,8 +27,8 @@ $tpl->setGlobal('siteName', SITE_NAME)
     ->setGlobal('imagesUrl', IMAGES_URL);
 
 // Set page-specific variables
-$tpl->set('pageTitle', 'Jelentkezés - Pásztortűz 2026')
-    ->set('metaDescription', 'Jelentkezz a Pásztortűz 2026 nyári táborba!')
+$tpl->set('pageTitle', 'Jelentkezés - Vezetőképző tábor 2026')
+    ->set('metaDescription', 'Jelentkezz az idei Vezetőképző táborba!')
     ->set('pageClass', 'registration-page');
 
 // Get active registration info
@@ -84,7 +84,7 @@ $activeRegistration = getActiveRegistration();
                 <!-- Page Header -->
                 <header class="page-header">
                     <h1 class="page-title">🎒 Jelentkezés</h1>
-                    <h2 class="page-subtitle">Pásztortűz 2026 Nyári Tábor</h2>
+                    <h2 class="page-subtitle">Vezetőképző tábor 2026</h2>
                     <div class="section-underline"></div>
                 </header>
 

@@ -258,12 +258,12 @@ define('DB_PASSWORD', 'Ajw8q]jxy)J*]mPCae74');
 define('REGISTRATION_ENABLED', true); 
 define('MAX_REGISTRATIONS', 150);     
 define('REGISTRATION_START_DATE', '2026-01-01'); 
-define('REGISTRATION_END_DATE', '2026-07-30');   
+define('REGISTRATION_END_DATE', '2026-06-30');   
 
 // ============================================
 // EMAIL Config
 // ============================================
 
-define('CONTACT_EMAIL', 'tothjanostamas@gmail.com');
-define('FROM_EMAIL', 'no-reply@magyarorszagfelfedezoi.hu');
+define('CONTACT_EMAIL', 'morvai.richard@gmail.com');
+define('FROM_EMAIL', 'info@magyarorszagfelfedezoi.hu');
 define('SMTP_ENABLED', false); 

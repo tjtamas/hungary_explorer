@@ -42,7 +42,7 @@ define('NEWS_ITEMS', [
     [
         'id' => 'jelentkezes-2026',
         'slug' => '2026/jelentkezes',
-        'title' => 'Pásztortűz tábor 2026',
+        'title' => 'Vezetőképző tábor 2026',
         'date' => '2026-01-15',
         'year' => 2026,
         'category' => 'jelentkezes',
@@ -51,9 +51,9 @@ define('NEWS_ITEMS', [
         'featured' => true,
         'registration_active' => true,
         'registration_deadline' => '2026-06-30',
-        'camp_date_start' => '2026-07-20',
-        'camp_date_end' => '2026-07-27',
-        'camp_price' => 38000,
+        'camp_date_start' => '2026-07-27',
+        'camp_date_end' => '2026-08-03',
+        'camp_price' => 35000,
         'hide_in_news_list' => true,
     ],
 

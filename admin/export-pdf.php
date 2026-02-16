@@ -29,7 +29,7 @@ $pdf->AddPage();
 
 // Cím
 $pdf->SetFont('dejavusans', 'B', 16);
-$pdf->Cell(0, 10, 'Pásztortűz Tábor 2026 - Jelentkezések', 0, 1, 'C');
+$pdf->Cell(0, 10, 'Vezetőképző Tábor 2026 - Jelentkezések', 0, 1, 'C');
 $pdf->Ln(3);
 
 // Dátum
